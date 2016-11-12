@@ -1,0 +1,86 @@
+
+{
+    "pages": 
+    [
+        {
+            "url" : "/index.html",
+            "id" : "1",
+            "type" : "LANDING",
+            "title":"JCMS",
+            "banner":"/images/banners/logo5.png",
+            "banner_attachment":"fixed",
+            "panels": [
+                {
+                    "data": 
+                    {
+                        "intro": "",
+                        "content_id":"108",
+                        "id":"logo_panel"
+                    }
+                },
+                {
+                    "data": 
+                    {
+                        "title": "#",
+                        "intro": "",
+                        "content_id":"109",
+                        "id":"ccms_display1",
+                        "transparency":"255,255,255,.5"
+                    }
+                },
+                {
+                    "data": 
+                    {
+                        "title": "#",
+                        "intro": "",
+                        "content_id":"107",
+                        "id":"ccms_display4",
+                        "transparency":"255,255,255,.5"
+                    }
+                },
+                {
+                    "data": 
+                    {
+                        "title": "Contact Us",
+                        "id":"wufoo_contact_form"
+                    }
+                },
+                {
+                    "data": 
+                    {
+                        "title": "#",
+                        "intro": "",
+                        "content_id":"110",
+                        "id":"ccms_display5"
+                    }
+                },
+                {
+                    "data": 
+                    {
+                        "title": "Tweets",
+                        "intro": "",
+                        "id":"twitter_widget",
+                        "transparency":"255,255,255,.5"
+                    }
+                },
+                {
+                    "data": 
+                    {
+                        "title": "Blogspot",
+                        "intro": "",
+                        "id":"blogspot",
+                        "transparency":"255,255,255,.5"
+                    }
+                },
+                {
+                    "data": 
+                    {
+                        "title": "Obtree Forum",
+                        "intro": "",
+                        "id":"obtree_forum"
+                    }
+                }
+            ]
+        }
+   ]
+}
