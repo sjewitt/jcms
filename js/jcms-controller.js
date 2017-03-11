@@ -125,8 +125,8 @@ var controller = {
                             /*
                              * Inject the Obtree forum widget:
                              */
-                            var obtree_forum_code = '<iframe id="forum_embed" src="javascript:void(0)"  scrolling="no"  frameborder="0"  width="900"  height="700"></iframe><script type="text/javascript">document.getElementById(\'forum_embed\').src = \'https://groups.google.com/forum/embed/?place=forum/jcms-obtree-users-group\'  + \'&showsearch=true&showpopout=true&showtabs=false\'  + \'&parenturl=\' + encodeURIComponent(window.location.href);</script>';
-                            $("#obtree_forum").html(obtree_forum_code);
+//                            var obtree_forum_code = '<iframe id="forum_embed" src="javascript:void(0)"  scrolling="no"  frameborder="0"  width="900"  height="700"></iframe><script type="text/javascript">document.getElementById(\'forum_embed\').src = \'https://groups.google.com/forum/embed/?place=forum/jcms-obtree-users-group\'  + \'&showsearch=true&showpopout=true&showtabs=false\'  + \'&parenturl=\' + encodeURIComponent(window.location.href);</script>';
+//                            $("#obtree_forum").html(obtree_forum_code);
                             
                             /*
                              * Add the blogspot stuff:
@@ -475,7 +475,7 @@ var controller = {
         $.ajax("/inc/footer.html",
         {
             success:function(data){
-                $("#footer").html(data);
+                $("#footer").html(data+"XXXXXXXX");
             },
             error:function(){
                 console.log("failed to load footer");
@@ -487,125 +487,6 @@ var controller = {
         var filename = this.getCleanUrl().split(/\//)[this.getCleanUrl().split(/\//).length-1];
         if(filename.length === 0) filename = this.defaultPage;
         return filename;
-    },
-    
-    /*
-class: "scheme-light"
-intro: "intro text intro text 1"
-link: "/landing.html"
-linkId: "2"
-title: "title text"
-
-Basic Structure:
-<div class="pure-u-1-2 pure-u-sm-1-4 linkpanel row-small" id="panel-1">
-    <div class="panel-title">
-        <h2></h2>
-    </div>
-    <div class="panel-text"></div>
-</div>
-
-* set type (HOME,LANDING,CONTENT). This determines the basic body content layout:
-*      HOME    - 1/4 width         pure-u-1-2 pure-u-sm-1-4 linkpanel row-small [scheme]
-*      LANDING - 1/2 width         pure-u-1 pure-u-sm-1-2 linkpanel row [scheme]
-*      CONTENT - 1/4 | 3/4 width   pure-u-1 pure-u-sm-1-4 contentpanel row [scheme]
-*                                  pure-u-1 pure-u-sm-3-4 contentpanel row [scheme]
-
-I only need panelNum on content pages to determine whether left or right panel
-     */
-    buildPanel : function(panelData,pageType,panelNum,data){
-        //console.table(panelData);
-        var basePanelClass1 = null;
-        var basePanelClass2 = null;
-  
-        //var url = this.getLinkFromId(data,panelData.linkId);
-        var addLink = false;
-        switch(pageType){
-            case this.TYPE_HOME :
-                basePanelClass1 = "pure-u-1-2 pure-u-sm-1-4 linkpanel row-small";
-                addLink = true;
-            break;
-                
-            case this.TYPE_LANDING :
-                basePanelClass1 = "pure-u-1 pure-u-sm-1-2 linkpanel row";
-                addLink = true;
-            break;
-                
-            case this.TYPE_CONTENT :
-                basePanelClass1 = "pure-u-1 pure-u-sm-1-4 contentpanel row";
-                basePanelClass2 = "pure-u-1 pure-u-sm-3-4 contentpanel row";
-            break;
-        }
-
-        var _outer = document.createElement("div");
-        
-        var baseClass = basePanelClass1;
-        if(pageType === this.TYPE_CONTENT && panelNum > 0){
-            baseClass = basePanelClass2;
-        }
-        
-        //do we have a modifier-class? This is defined in the JSON data
-        if(panelData.modifier_class !== null && panelData.modifier_class !== undefined && panelData.modifier_class !== ""){
-            baseClass += " " + panelData.modifier_class;
-        }
-        
-        //do we have 'transparency' flag?
-        if(panelData.transparency !== null && panelData.transparency !== undefined && panelData.transparency !== ""){
-            $(_outer).attr("style","background:rgba(" + panelData.transparency +")");
-        }
-        
-        $(_outer).attr("class",baseClass);
-        if(panelData.id !== null){
-            $(_outer).attr("id",panelData.id);
-        }
-        if(addLink) $(_outer).attr("data-url",panelData.link);   //conditional
-        $(_outer).addClass(panelData.class);
-        
-        if(panelData.title !== null && panelData.title !== undefined && panelData.title !== ""){
-            var _title = document.createElement("div");
-            $(_title).addClass("panel-title");
-        }
-        
-        var _headline = document.createElement("h2");
-        $(_headline).html(panelData.title);
-        
-        var _text = document.createElement("div");
-        $(_text).attr("class","panel-text");
-        
-        /*
-         * If intro text is omitted, convert to a narrow title bar:
-         * */
-        if(panelData.intro === undefined){
-            $(_outer).css({"height":"75px"});
-        }
-        else{
-            $(_text).html(panelData.intro);
-        }
-        
-        if(panelData.content_id !== undefined){
-            //todo: Add logic for taking title from ONE panel or none. For now, just suppress.
-            ccms.renderCCMSContentItem(panelData.content_id,"#"+panelData.id+" > div.panel-text","#" + panelData.id);
-        }
-        
-        /*
-         * If an array of subnav items is defined in panel, render linklist
-         * get all CCMS objects matching the array:
-         * 
-         * I also want to handle #contentid=123 to render comtent as well.
-         */
-        if(panelData.ajax_sub_menu_array !== null && typeof(eval(panelData.ajax_sub_menu_array)) === "object" && panelData.ajax_sub_menu_array.length > 0){
-            ccms.renderCCMSSubnav(eval(panelData.ajax_sub_menu_array),$(_text),"#ccms_display > div.panel-text","#ccms_display");
-            ccms.buildSubnav = true;
-        } 
-        
-        //build structure:
-        if(panelData.title !== null && panelData.title !== undefined && panelData.title !== ""){
-            _title.appendChild(_headline);
-            _outer.appendChild(_title);
-        }
-        
-        _outer.appendChild(_text);
-        
-        return(_outer);
     },
     
     /*

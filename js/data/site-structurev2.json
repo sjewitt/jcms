@@ -3,7 +3,7 @@
     "pages": 
     [
         {
-            "url" : "/index.html",
+            "url" : "/index_old.html",
             "id" : "1",
             "type" : "LANDING",
             "title":"JCMS",

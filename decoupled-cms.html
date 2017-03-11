@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JCMS Consulting - Clean code, Elegant solutions</title>
+        <meta name="keywords" content="RedDot, red dot cms,reddot cms,opentext web site management, obtree cms,obtree wcm,obtree, presentation server, headless CMS, decoupled CMS, REST API, XML, structured content API">
+        <meta name="description" content="Solutions for transforming legacy RedDot or Obtree WCM websites into a modern decoupled content source"> 
+        
+        <meta property="og:title" content="JCMS Consulting: Decoupled CMS" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="http://www.jcms-consulting.co.uk/reddot-cms.html" />
+        <meta property="og:image" content="http://www.jcms-consulting.co.uk/images/logos/jcms-logo-little.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="200" />
+        <meta property="og:image:height" content="200" />
+        <meta property="og:description" content="Solutions for transforming legacy RedDot or Obtree WCM websites into a modern decoupled content source" />
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/js/libs/pure/pure.css" rel="stylesheet" type="text/css">
+        <link href="/js/libs/pure/grids-responsive.css" rel="stylesheet" type="text/css">
+        <link href="/js/libs/jqueryui/jquery-ui.css" rel="stylesheet" type="text/css">
+        <link href="/js/libs/pure/pure.css" rel="stylesheet" type="text/css">
+        <link href="/js/libs/pure/grids-responsive.css" rel="stylesheet" type="text/css">
+        <link href="/css/wufoo/form.css" rel="stylesheet" type="text/css">
+        <link href="/css/wufoo/structure.css" rel="stylesheet" type="text/css">
+        <link href="/css/jcms.css" rel="stylesheet" type="text/css">
+        
+        <link rel="canonical" href="http://www.jcms-consulting.co.uk/decoupled-cms.html">
+        <link rel="icon" type="image/gif" href="http://www.jcms-consulting.co.uk/images/logo-tiny.gif">
+    </head>
+
+    <body class="jcms-reddot">
+        <div class="pure-g row-smaller heading">
+            <div class="pure-u-1">
+                <a href="index.html" title="Home">
+                    <img class="inline-logo" src="images/logos/logo-large-red.jpg" alt="JCMS Logo"/>
+                </a>
+                <h1>Decoupled/Headless CMS concept</h1>
+            </div>
+        </div>
+        <div class="pure-g divider">
+            <div class="pure-u-1">
+
+            </div>
+        </div>
+
+        <div class="pure-g" id="body-content">
+            
+            <!-- content blocks -->
+            
+            <!-- logo/title -->
+            <div class="pure-u-1 pure-u-sm-1-2 linkpanel row">
+                <div class="panel-title"><h2>Concept</h2></div>
+                <div class="panel-text">
+                    <p>
+                        Traditional CMS systems are designed to render web pages based on a given design template incorporating content 
+                        authored by non-technical users. The rendering of the content to alternate consuming applications 
+                        is not usually considered, with the exception of perhaps different HTML variants depending on device (mobile vs desktop for example)
+                    </p>
+                    <p>
+                        <!--A <a href="https://www.contentful.com/r/knowledgebase/headless-and-decoupled-cms/" target="_blank" title="Decoupled CMS discussion at contentful.com">decoupled CMS</a>--> 
+                        A <b>decoupled CMS</b> system does not assume any particular consuming application, but delivers content in
+                        a format suitable for simple programmatic integration by <i>any</i> consuming target. This format typically 
+                        is XML or JSON of a documented schema. 
+                    </p>
+                    <p class="highlight">
+                        We can extend your existing RedDot CMS or Obtree WCM deployments to expose existing content as structured data
+                        to suit your integration requirements.
+                    </p>
+                    <p>
+                        Both these products, although originally intended as stand-alone web content management systems,
+                        are capable of delivering content wrapped in XML or JSON for consumption by any enabled application.
+                    </p>
+                </div>
+            </div>
+
+            
+            <!-- Obtree -->
+            <div class="pure-u-1 pure-u-sm-1-2 linkpanel row transparency">
+                <div class="panel-title">
+                    <h2><a href="obtree-wcm.html" Title="Obtree WCM">Obtree WCM</a></h2>
+                </div>
+                <div class="panel-text">
+                    <p>
+                        The underlying design of Obtree WCM means it is very simple to expose all content, templates, images 
+                        and other component objects either directly, or formatted as wrapped structured data.
+                    </p>
+                    <p>
+                        Obtree WCM has, out-of-the-box, a number of SOAP interfaces (so-called 'managers') that allow both retrieval, and interaction with, 
+                        various aspects of the system. This model of object access, while core product, is more aimed at complex integrations</p>
+                    <p>Further, all objects - if given a URL - are instantly accessible over HTTP(S), though will be
+                        returned as-is, with no structured wrapper.  
+                    </p>
+                    <p>
+                        We can can  very easily develop a simple interface to retrieve content wrapped in XML or JSON, in response to a 
+                        structured URL, using the Obtree WCM scripting layer. This can be extended to return lists, or include a simple API to 
+                        get texts, or images, or templates. 
+                    </p>
+                    <p>In other words, a simple REST API. </p>
+                </div>
+            </div>
+            
+            <!-- Red Dot -->
+            <div class="pure-u-1 pure-u-sm-1-2 linkpanel row transparency" id="ccms_display4">
+                <div class="panel-title">
+                    <h2><a href="reddot-cms.html" title="RedDot CMS">RedDot CMS</a></h2>
+                </div>
+                <div class="panel-text">
+                    <p>RedDot CMS is conceptually different from Obtree WCM - it is a publisher, not a dynamic renderer. It assembles pages based on template and authored content, 
+                        and publishes the end result as flat files.
+                    RedDot CMS has the concept of 'variants'. These are simply different templates associated with a given content container, or 'content class'. These templates can be
+                    any format you like.</p>
+                    <p>
+                        Therefore, it is straightforward to add a variant to the system that renders XML or JSON. This is standard out-of-the-box functionality, but 
+                        is dependent on careful management to ensure that the end result is consistent. The URL endpoints are not standard REST style, but can be 
+                        made so with URL rewrite rules in the web config file.
+                    </p>
+                    <p>
+                        A more complex option is to extend the <i>pre-publication</i> environment with an RQL enabled application that can respond to a REST request
+                        with a consistent XML or JSON response.
+                        This option is more complex, but exposes the pre-publication content in a completely dynamic way
+                    </p>
+                </div>
+            </div>
+            
+            
+            <div class="pure-u-1 pure-u-sm-1-2 linkpanel row">
+                <div class="panel-title">
+                    <h2>What we can offer</h2>
+                </div>
+                <div class="panel-text">
+                    <p>Using your Obtree or RedDot CMS as a headless CMS offers the following benefits:</p>
+                    <ul>
+                        <li>Reduce the need to re-train authors in a new system.</li>
+                        <li>Remove the need for laborious content porting into a new system.</li>
+                        <li>Maximise your ROI on your RedDot or Obtree system by extending its lifespan.</li>
+                    </ul>
+                    <p>
+                        Please <a href="index.html?subject=decoupled:offering#contact" title="Contact Us">contact us</a>
+                        to discuss this in detail.
+                    </p>
+                </div>
+            </div>
+           
+       </div>
+        <div class="pure-g divider">
+            <div class="pure-u-1"></div>
+        </div>
+        <div class="pure-g row-small" id="footer"></div>
+        <script src="/js/libs/jquery/jquery.js" type="text/javascript"></script>    
+        <script src="/js/libs/jquery.color/jquery.color.2.1.2.js" type="text/javascript"></script>
+        <script src="/js/libs/jqueryui/jquery-ui.js" type="text/javascript"></script>
+        <script src="/js/jcms-controller-static.js" type="text/javascript"></script>
+    </body>
+</html>
