@@ -8,20 +8,7 @@
  * 
  */
 var controller = {
-    
-//    TYPE_HOME : "HOME",
-//    TYPE_LANDING :"LANDING",
-//    TYPE_CONTENT : "CONTENT",
-//    TYPE_CUSTOM : "CUSTOM",
-//    TYPE_DEFAULT : this.TYPE_CONTENT,
-//    
-//    defaultPage : "index.html",
-//    currentPage : null,
-//    currentPath : [],
-//    data : null,
-//    dataOk : false,
-    //loading : "/images/icons/ajax-loader-2.gif",
-    
+  
     //wufoo:
     wufoo_dialog_width : window.innerWidth * 0.9,
     wufoo_dialog_height : window.innerHeight * 0.9,
@@ -85,7 +72,7 @@ var controller = {
         /*
         * Inject the Obtree forum widget:
         */
-        var obtree_forum_code = '<iframe id="forum_embed" src="javascript:void(0)"  scrolling="no"  frameborder="0"  width="900"  height="700"></iframe><script type="text/javascript">document.getElementById(\'forum_embed\').src = \'https://groups.google.com/forum/embed/?place=forum/jcms-obtree-users-group\'  + \'&showsearch=true&showpopout=true&showtabs=false\'  + \'&parenturl=\' + encodeURIComponent(window.location.href);</script>';
+        var obtree_forum_code = '<iframe id="forum_embed" src="javascript:void(0)"  scrolling="no"  frameborder="0"  width="900"  height="700"></iframe><script type="text/javascript">document.getElementById(\'forum_embed\').src = \'https://groups.google.com/forum/embed/?place=forum/jcms-green-users-group\'  + \'&showsearch=true&showpopout=true&showtabs=false\'  + \'&parenturl=\' + encodeURIComponent(window.location.href);</script>';
         $("#obtree_forum").html(obtree_forum_code);
     },
     
@@ -128,6 +115,9 @@ var controller = {
         });
     },
 
+/*
+ * Play with UI
+ */
     switchTransparency : function(){
                                     /*
         * and set the stripyness on resize...
@@ -141,8 +131,19 @@ var controller = {
        }
     },
 
-
-
+    /*
+     * set the grey border to be 100% height if content is not full height.
+     * Only applies on widescreen.
+     */
+    setTextBorderHeight : function(){
+        //check width (ie only on wide)
+        
+        //get pairs
+        
+        //get TALLEST of pair
+        
+        //set height of other to match
+    },
 
 
 

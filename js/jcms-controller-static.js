@@ -6,8 +6,37 @@
  * 
  * AJAX injection routines removed, and injection of remote content (twitter, blogger etc.) modified to 
  * work with static HTML source.
+ * 
+ * ADD A GOOGLE SEARCH INTEGRATION
+ * ADD GOOGLE SITEMAP XML
  */
 var controller = {
+    
+    //push these into blocks, and build navs
+    //possibly a breadcrumb too
+    SITEMAP : [
+        {"key":"1",         "url":"/index.html",                    "linktext" : "Home",             "parent" : null},
+        {"key":"1-1",       "url":"/what-we-do.html",               "linktext":"What We Do",                    "parent" : "1"},
+        {"key":"1-2",       "url":"/obtree-wcm.html",               "linktext":"Obtree WCM",                    "parent" : "1"},
+        {"key":"1-2-1",     "url":"/obtree-case-studies.html",      "linktext":"Case Studies",       "parent" : "1-2"},
+        {"key":"1-2-2",     "url":"/obtree-tips.html",              "linktext":"Tips",               "parent" : "1-2"},
+        {"key":"1-3",       "url":"/reddot-cms.html",               "linktext":"RedDot CMS",                    "parent" : "1"},
+        {"key":"1-3-1",     "url":"/reddot-case-studies.html",      "linktext":"Case Studies",       "parent" : "1-3"},
+        {"key":"1-3-2",     "url":"/reddot-tips.html",              "linktext":"Tips",               "parent" : "1-3"},
+        {"key":"1-4",       "url":"/decoupled-cms.html",            "linktext":"Decoupled CMS",                 "parent" : "1"},
+        {"key":"1-4-1",     "url":"/decoupled-cms-details.html",    "linktext":"Details",                 "parent" : "1-4"},
+        {"key":"1-5",       "url":"/web-development.html",          "linktext":"Web Development",               "parent" : "1"},
+        {"key":"1-5-1",     "url":"/integrations.html",             "linktext":"Integrations",                  "parent" : "1-5"},
+        {"key":"1-5-1-1",   "url":"/cludo.html",                    "linktext":"Cludo Search",                  "parent" : "1-5-1"},
+        {"key":"1-5-1-2",   "url":"/google-map.html",               "linktext":"Google Maps",                   "parent" : "1-5-1"},
+        {"key":"1-5-1-3",   "url":"/google-blog.html",              "linktext":"Google Blogger",                "parent" : "1-5-1"},
+        {"key":"1-5-2",     "url":"/web-design.html",               "linktext":"Web Design",                    "parent" : "1-5"},
+        {"key":"1-5-3",     "url":"/web-design-case-studies.html",  "linktext":"Web Development Case Studies",  "parent" : "1-5"},
+        {"key":"1-5-4",     "url":"/jcms-wordpress-plugins.html",  "linktext":"JCMS WordPress Plugins",         "parent" : "1-5"},
+        {"key":"1-5-4-1",     "url":"/jcms-wordpress-plugin-librivox.html",  "linktext":"Librivox Plugin",         "parent" : "1-5-4"},
+        {"key":"1-5-4-2",     "url":"/jcms-wordpress-plugin-cms-connector.html",  "linktext":"CMS Connector",         "parent" : "1-5-4"},
+        {"key":"1-6",       "url":"/customers.html",                "linktext":"Customers",                     "parent" : "1"}
+        ],
     
     TYPE_HOME : "HOME",
     TYPE_LANDING :"LANDING",
@@ -15,7 +44,7 @@ var controller = {
     TYPE_CUSTOM : "CUSTOM",
     TYPE_DEFAULT : this.TYPE_CONTENT,
     
-                    //manage selection of dropdown based on query string:
+    //manage selection of dropdown based on query string:
     mapper : {
         "general" : "General",
         "decoupled:offering":"Decoupled CMS",
@@ -67,15 +96,75 @@ var controller = {
         });
 
     
-        console.log(this.sourceHTMLTransparencyFlagArray);
-        this.loadPageSpecificStuff();
-        //this.loadData();
-        //this.loadSearchBanner();     //AJAX load
-        //this.loadBannerImages();     //from JSON TODO
-        this.loadCommonElements();
+//        $(".linkpanel").first().each(function(){
+//            $(this).parent().hide();
+//            var width = $(this).width();
+//            $(this).parent().show();
+//            //controller.setTextBorderHeight(width);
+//        });
+       //this.setTextBorderHeight();
+       this.getContainerHeights();
+       this.loadCommonElements();
+       this.loadPageSpecificStuff();
+       this.buildBreadcrumb();
+       
+       console.log(this.bc);
+    },
+
+    buildBreadcrumb : function(){
+
+        buildBC = function(obj){
+            var out = new Array();
+            out.push(obj);
+            
+            recurse = function(obj){
+               for(var a=0;a< controller.SITEMAP.length;a++){
+                    if(controller.SITEMAP[a].key === obj.parent){
+                        obj = controller.SITEMAP[a];
+                        out.push(obj);
+                        recurse(obj);
+                    }
+                } 
+            };
+            
+            recurse(obj);
+            return out;
+        };
+        
+        var bc = [];
+        for(var a=0;a<this.SITEMAP.length;a++){
+            if(this.getRelativeUrl(true) === this.SITEMAP[a].url){
+                bc = buildBC(this.SITEMAP[a]);
+            }
+        };
+        controller.bc = bc.reverse();
+        console.log(controller.bc);
+        //finally, construct the HTML:
+        var _outer = document.createElement("div");
+        var _title = document.createElement("h2");
+
+        $(_outer).addClass("pure-u-1 row-tiny linkpanel panel-title");
+        $(_outer).attr("id","bc");
+        var _bc = [];   //lazy. Do as DOM eleemnts
+        for(var a = 0;a < controller.bc.length; a++){
+            if(a === controller.bc.length-1){
+                _bc .push("<span class='bc-tip'>" + controller.bc[a].linktext + "</span>");
+            }
+            else{
+                _bc .push("<a href='" + controller.bc[a].url + "'>" + controller.bc[a].linktext + "</a>");
+            }
+            
+        }
+        
+        $(_title).html(_bc.join(" &raquo; "));
+        _outer.appendChild(_title);
+        //prepend:
+        $("#body-content").prepend($(_outer));
+        
     },
 
     loadPageSpecificStuff : function(){
+        //console.log(this.getPageFilename());
         switch(this.getPageFilename()){
             case "index.html":
                 
@@ -86,8 +175,6 @@ var controller = {
                 wufoo_wrapper.setAttribute("id","wufoo-z157nixr1oirgiy");
 
                 
-                
-                //var formStructure = '<form id="form1" name="form1" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate  action="https://jcmssilas.wufoo.com/forms/z157nixr1oirgiy/#public"><!-- header id="header" class="info"><h2>Contact Us</h2><div></div></header --><ul><li id="foli107" class="notranslate"><label class="desc" id="title107" for="Field107">Name</label><div><input id="Field107" name="Field107" type="text" class="field text large" value="" maxlength="255" tabindex="1" onkeyup=""       /></div></li><li id="foli3" class="notranslate      "><label class="desc" id="title3" for="Field3">Email<span id="req_3" class="req">*</span></label><div><input id="Field3" name="Field3" type="email" spellcheck="false" class="field text large" value="" maxlength="255" tabindex="2" required /></div></li><li id="foli109" class=""><label class="desc notranslate" id="title109" for="Field109">What do you want to discuss?</label><div><select id="Field109" name="Field109" class="field select large" tabindex="3" ><option value="General" selected="selected"><span class="notranslate">General</span></option><option value="Obtree support"><span class="notranslate">Obtree support</span></option><option value="Obtree upgrade" ><span class="notranslate">Obtree upgrade</span></option><option value="Obtree development" ><span class="notranslate">Obtree development</span></option><option value="Obtree integration" ><span class="notranslate">Obtree integration</span></option><option value="Red Dot support" ><span class="notranslate">Red Dot support</span></option><option value="Red Dot upgrade" ><span class="notranslate">Red Dot upgrade</span></option><option value="Red Dot development" ><span class="notranslate">Red Dot development</span></option><option value="Red Dot integration" ><span class="notranslate">Red Dot integration</span></option><option value="Website build" ><span class="notranslate">Website build</span></option><option value="Web application development" ><span class="notranslate">Web application development</span></option><option value="Server-side development" ><span class="notranslate">Server-side development</span></option></select></div></li><li id="foli4" class="notranslate"><label class="desc" id="title4" for="Field4">Your message</label><div><textarea id="Field4" name="Field4" class="field textarea small" spellcheck="true" rows="10" cols="50" tabindex="4" onkeyup=""></textarea></div></li> <li class="buttons "><div><input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit"/></div></li><li class="hide"><label for="comment">Do Not Fill This Out</label><textarea name="comment" id="comment" rows="1" cols="1"></textarea><input type="hidden" id="idstamp" name="idstamp" value="4OmMIKthKce7wuHEVj62nALcj1oJFs3sD8tfYS/mWgU=" /></li></ul></form>';
                 var formStructure = '<form id="form1" name="form1" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://jcmssilas.wufoo.com/forms/z157nixr1oirgiy/#public"><header id="header" class="info"><h2>Contact Us</h2><div></div></header><ul><li id="foli107" class="notranslate"><label class="desc" id="title107" for="Field107">Name</label><div><input id="Field107" name="Field107" type="text" class="field text large" value="" maxlength="255" tabindex="1" onkeyup=""       /></div></li><li id="foli3" class="notranslate      "><label class="desc" id="title3" for="Field3">Email<span id="req_3" class="req">*</span></label><div><input id="Field3" name="Field3" type="email" spellcheck="false" class="field text large" value="" maxlength="255" tabindex="2"       required /></div></li><li id="foli109" class="      "><label class="desc notranslate" id="title109" for="Field109">Select a Choice</label><div><select id="Field109" name="Field109" class="field select medium"       tabindex="3" ><option value="General" selected="selected"><span class="notranslate">General</span></option><option value="Decoupled CMS" ><span class="notranslate">Decoupled CMS</span></option><option value="Obtree support" ><span class="notranslate">Obtree support</span></option><option value="Obtree training" ><span class="notranslate">Obtree training</span></option><option value="Obtree upgrade" ><span class="notranslate">Obtree upgrade</span></option><option value="Obtree development" ><span class="notranslate">Obtree development</span></option><option value="Obtree integration" ><span class="notranslate">Obtree integration</span></option><option value="Obtree as headless CMS" ><span class="notranslate">Obtree as headless CMS</span></option><option value="Red Dot support" ><span class="notranslate">Red Dot support</span></option><option value="Red Dot training" ><span class="notranslate">Red Dot training</span></option><option value="Red Dot upgrade" ><span class="notranslate">Red Dot upgrade</span></option><option value="Red Dot development" ><span class="notranslate">Red Dot development</span></option><option value="Red Dot integration" ><span class="notranslate">Red Dot integration</span></option><option value="Red Dot as headless CMS" ><span class="notranslate">Red Dot as headless CMS</span></option><option value="Website build" ><span class="notranslate">Website build</span></option><option value="Web application development" ><span class="notranslate">Web application development</span></option><option value="Server-side development" ><span class="notranslate">Server-side development</span></option></select></div></li><li id="foli4" class="notranslate"><label class="desc" id="title4" for="Field4">Your message</label><div><textarea id="Field4" name="Field4" class="field textarea small" spellcheck="true" rows="10" cols="50" tabindex="4" onkeyup=""></textarea></div></li> <li class="buttons "><div><input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit" /></div></li><li class="hide"><label for="comment">Do Not Fill This Out</label><textarea name="comment" id="comment" rows="1" cols="1"></textarea><input type="hidden" id="idstamp" name="idstamp" value="4OmMIKthKce7wuHEVj62nALcj1oJFs3sD8tfYS/mWgU=" /></li></ul></form>';
                 
                 //add form:
@@ -102,11 +189,11 @@ var controller = {
                     //set dropdown option:
                     $(wufoo_wrapper).find("#Field109 > option").each(function(){
                         
-                        console.log($(this).attr("value") + " : " + controller.mapper[subject_query]);
+                        //console.log($(this).attr("value") + " : " + controller.mapper[subject_query]);
                         
 //                        console.log();
                         if($(this).attr("value") === controller.mapper[subject_query]){
-                            console.log(" --> match");
+                            //console.log(" --> match");
                             $(this).attr("selected","selected");
                         }
                         else{
@@ -146,7 +233,7 @@ var controller = {
                 /*
                  * Inject the Obtree forum widget:
                  */
-                var obtree_forum_code = '<iframe id="forum_embed" src="javascript:void(0)"  scrolling="no"  frameborder="0"  width="900"  height="400"></iframe><script type="text/javascript">document.getElementById(\'forum_embed\').src = \'https://groups.google.com/forum/embed/?place=forum/jcms-obtree-users-group\'  + \'&showsearch=true&showpopout=true&showtabs=false\'  + \'&parenturl=\' + encodeURIComponent(window.location.href);</script>';
+                var obtree_forum_code = '<iframe id="forum_embed" src="javascript:void(0)"  scrolling="no"  frameborder="0"  width="900"  height="400"></iframe><script type="text/javascript">document.getElementById(\'forum_embed\').src = \'https://groups.google.com/forum/embed/?place=forum/jcms-green-users-group\'  + \'&showsearch=true&showpopout=true&showtabs=false\'  + \'&parenturl=\' + encodeURIComponent(window.location.href);</script>';
                 $("#obtree_forum").html(obtree_forum_code);
 
                 /*
@@ -155,15 +242,19 @@ var controller = {
                 $("#blogspot div.panel-text").css({"overflow":"auto","height":"300px"});
 
                 //points at: http://jcms-consulting.blogspot.com/feeds/posts/default
+                //console.log("call blocspot");
                 $.ajax("/proxy/Passthrough-proxy.aspx",{
                     success:function(data){ //changes context for data
+                        //console.log(data);
                         var _out = "";
                         var title = data.getElementsByTagName("title")[0].firstChild.nodeValue;
 
                         _out += "<h3><a href='http://jcms-consulting.blogspot.com' target='_blank' title='JCMS Blog'><img src='/images/Blogger.svg.png' alt='Blogger logo' style='width:30px;vertical-align:middle;padding-right:10px;padding-bottom:5px;' /></a>"+title+"</h3>";
                         var entries = data.getElementsByTagName("entry");
-                        _out += "<ul>"
-                        for(var a=entries.length-1;a>=0;a--){
+                        _out += "<ul>";
+                        
+                        //for(var a=entries.length-1;a>=0;a--){
+                        for(var a=0;a < entries.length;a++){
                             var entryText = entries[a].getElementsByTagName("title")[0].firstChild.nodeValue;
 
                             //var _date = new Date(Date.parse(date));
@@ -182,7 +273,9 @@ var controller = {
 
                         $("#blogspot div.panel-text").html(_out);
                     },
-                    error:function(){},
+                    error:function(err){
+                        console.log(err);
+                    },
                     complete:function(){}
                 });
 
@@ -196,11 +289,13 @@ var controller = {
                 if(width === 100){  //ie we are on narrow screen
                     this.switchTransparency(width);
                 }
-                
+                if(width === 50){
+                    //this.setTextBorderHeight(width);
+                }
                 break;
                 
             case "obtree-wcm.html":
-                console.log("loading obtree page widgets:");
+                //console.log("loading obtree page widgets:");
                 break;
                 
         }
@@ -261,10 +356,9 @@ var controller = {
         if(!clean) _url += window.location.search;
         return _url;
     },
-
-      
+  
     loadCommonElements : function(){
-        console.log("loading footer:");
+        //console.log("loading footer:");
         $.ajax("/inc/footer.html",
         {
             success:function(data){
@@ -329,7 +423,32 @@ var controller = {
             break;
         }
 
+    },
+
+    getContainerHeights : function(){
+        var counter = 0;
+        $("div.linkpanel.row").each(function(){
+            //controller.setTextBorderHeight($(this).height(),counter); //WTF!!!!!
+            counter++;
+        });
+    },
+
+    /*
+     * set the grey border to be 100% height if content is not full height.
+     * Only applies on widescreen.
+     * EXPERIMENTAL
+     * 
+     * HEIGHT OF PANEL - HEIGHT OF TITLE! DOH!!!
+     * work out heights of container FIRST and pass in here: TODO
+     */
+    setTextBorderHeight : function(containerHeight, index){
+        //console.log(containerHeight);
+        //console.log(containerHeight - 40);
+        //console.log(index);
+        $("div.panel-text").eq(index).css({'height':''});
+//        $("div.panel-text").eq(index).css({'height':(containerHeight-100) + "px"});
     }
+
 };
 
 /*
@@ -353,33 +472,33 @@ $(function(){
      * build AJAX loading overlay
      */ 
     //var counter = 0;
-    var overlay = document.createElement("div");
-    overlay.setAttribute("id","overlay");
-
-    var spacer = document.createElement("span");
-    spacer.setAttribute("id","vertical-centerer");
-
-    overlay.appendChild(spacer);
-
-    var loading = document.createElement("img");
-    loading.setAttribute("id","centered");
-    loading.setAttribute("src",controller.loading);
-    overlay.appendChild(loading);
+//    var overlay = document.createElement("div");
+//    overlay.setAttribute("id","overlay");
+//
+//    var spacer = document.createElement("span");
+//    spacer.setAttribute("id","vertical-centerer");
+//
+//    overlay.appendChild(spacer);
+//
+//    var loading = document.createElement("img");
+//    loading.setAttribute("id","centered");
+//    loading.setAttribute("src",controller.loading);
+//    overlay.appendChild(loading);
 
 /*
  * Maybe move this?
  * @param {type} param
  */
-$(document).ajaxStart(function(){
-
-    if(controller.getPageFilename() === "librivox.html"){
-        (document.getElementsByTagName("body")[0]).appendChild(overlay);
-    }
-}).ajaxStop(function(){
-    if(controller.getPageFilename() === "librivox.html"){
-        $("#overlay").remove();
-    }
-});
+//$(document).ajaxStart(function(){
+//
+//    if(controller.getPageFilename() === "librivox.html"){
+//        (document.getElementsByTagName("body")[0]).appendChild(overlay);
+//    }
+//}).ajaxStop(function(){
+//    if(controller.getPageFilename() === "librivox.html"){
+//        $("#overlay").remove();
+//    }
+//});
 /*
  * Google CSE code
  * https://cse.google.co.uk/cse/all
@@ -435,6 +554,8 @@ $(window).resize(function(){
         if(prevWidth !== -1 && prevWidth !== width){
             controller.switchTransparency(width);
         }
+        //controller.setTextBorderHeight(width);
+        controller.getContainerHeights();
         prevWidth = width;
     });
 

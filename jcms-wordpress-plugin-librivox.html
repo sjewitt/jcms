@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>JCMS WordPress Plugins</title>
+        <meta name="keywords" content="TODO integrations,cludo,Cludo">
+        <meta name="description" content="Solutions for website technical design, build and maintenance"> 
+        
+        <!-- Open Graph data -->
+        <meta property="og:title" content="JCMS Consulting: Web Development" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="http://www.jcms-consulting.co.uk/web-development.html" />
+        <meta property="og:image" content="http://www.jcms-consulting.co.uk/images/logos/logo-large-aqua.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="200" />
+        <meta property="og:image:height" content="200" />
+        <meta property="og:description" content="Solutions for website technical design, build and maintenance" />
+        
+        
+        <meta charset="UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/js/libs/pure/pure.css" rel="stylesheet" type="text/css">
+        <link href="/js/libs/pure/grids-responsive.css" rel="stylesheet" type="text/css">
+        <link href="/js/libs/jqueryui/jquery-ui.css" rel="stylesheet" type="text/css">
+        <link href="/js/libs/pure/pure.css" rel="stylesheet" type="text/css">
+        <link href="/js/libs/pure/grids-responsive.css" rel="stylesheet" type="text/css">
+        <link href="/css/wufoo/form.css" rel="stylesheet" type="text/css">
+        <link href="/css/wufoo/structure.css" rel="stylesheet" type="text/css">
+        <link href="/css/jcms.css" rel="stylesheet" type="text/css">
+        
+        <link rel="canonical" href="http://www.jcms-consulting.co.uk/web-development.html">
+        <link rel="icon" type="image/gif" href="http://www.jcms-consulting.co.uk/images/logo-tiny.gif">
+    </head>
+
+    <body class="jcms-teal">
+        
+        <div class="pure-g row-smaller heading teal">
+            <div class="pure-u-1">
+                <a href="index.html" title="Home">
+                    <img class="inline-logo" src="images/logos/logo-large-aqua.jpg" alt="JCMS Logo"/>
+                </a>
+                <div class="strapline"><h1>JCMS WordPress Plugins</h1></div>
+            </div>
+        </div>
+
+        <div class="pure-g" id="body-content">
+            
+            <!-- content blocks -->
+            
+            <!-- logo/title -->
+            <div class="pure-u-1 linkpanel row">
+                <div class="panel-title">
+                    <h2>WP-LibriVox</h2>
+                </div>
+                <div class="panel-text">
+                    <h3>Description</h3>
+                    <p>
+                        A shortcode-based plugin that accesses free public domain readings of out-of-copyright and copyright-free books. Recordings are provided by <a href="https://www/librivox.org" title="LibriVox.org">LibriVox.org</a> and are accessed via the <a href="https://librivox.org/api/info" title="LibriVox REST API">LibriVox REST API</a>
+                    </p>
+                    <p>
+                        The plugin provides a shortcode interface that allows presentation of a specified book, by its LibriVox API ID, with downloadable or HTML5 playable content.
+                    </p>
+                    <p>
+                        The plugin also provides a rich web application that allows direct searching, browsing and playing of any recording in the LibriVox calatlogue. This application uses a large subset of the full LibriVox API to realise its functionality.
+                    </p>
+                    <p>
+                        The rich web application uses a proxy REST API, accessed by client-side JavaScript. This proxy API is also available should other plugins wish to use it.
+                    </p>
+                </div>
+                
+                <div class="panel-text">
+                    <h3>Features</h3>
+                    <ul>
+                        <li>Access thousands of public domain readings</li>
+                        <li>Simple shortcode interface</li>
+                        <li>REST interface for programmers</li>
+                    </ul>
+                    </div>
+                
+                <div class="panel-text">
+                    <h3>Deployment</h3>
+                    <p>
+                        Unzip the plugin archive into <code>/wp-content/plugins/</code> directory of your WordPress installation. Enable in the plugins section of the wp-admin dashboard. There are no configuration options needed.
+                    </p>
+                    </div>
+                
+                <div class="panel-text">
+                    <h3>Shortcode for single book</h3>
+                    <p>
+                        Add shortcode <code>[librivox_book bookid="nnn"]</code> In a suitable location. The parameter 'nnn' is the LibriVox book ID. For example, replacing 'nnn' with '804' will render the classic Conan Doyle Sherlock Holmes collection:
+                        </p>
+                        <figure>
+                            <img class="large" src="images/lv-single.jpg" alt="LibriVox single book"/>
+                            <figcaption>LibriVox single book</figcaption>
+                        </figure>
+                    </div>
+                
+                <div class="panel-text">
+                    <h3>Shortcode for interactive app</h3>
+                    <p>
+                        Add shortcode <code>[librivox_app]</code> In a suitable location. This will trigger the full interactive application, allowing searching for books by author and playing an audio book:
+                    </p>
+                    <figure>
+                        <img class="large" src="images/lv_app.jpg" alt="LibriVox interactive application #1"/>
+                        <figcaption>#1: Search for Author</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="large" src="images/lv_app2.jpg" alt="LibriVox interactive application #2"/>
+                        <figcaption>#2: Booklist</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="large" src="images/lv_app3.jpg" alt="LibriVox interactive application #3"/>
+                        <figcaption>#3: Select book</figcaption>
+                    </figure>
+                    <figure>
+                        <img class="large" src="images/lv_app4.jpg" alt="LibriVox interactive application #4"/>
+                        <figcaption>#4: Play track</figcaption>
+                    </figure>
+                </div>
+                
+                <div class="panel-text">
+                    <h3>REST endpoints</h3>
+                    <p>
+                        These are the available REST endpoints should another plugin require them. 
+                        [Note that the URL may require a '<code>index.php</code>' prefix, depending on your permalink settings.]
+                    </p>
+                    <ul>
+                        <li>List all authors:  <code>/wp-json/wp-librivox/v1/authors</code> </li>
+                        <li>List books by author (e.g. &#8216;doyle&#8217;):  <code>/wp-json/wp-librivox/v1/books/doyle</code> </li>
+                        <li>Get book details by book ID:   <code>/wp-json/wp-librivox/v1/books/id/4135</code> </li>
+                        <li>Get track list by book ID:   <code>/wp-json/wp-librivox/v1/rss/4135</code> </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="pure-g divider">
+            <div class="pure-u-1"></div>
+        </div>
+        <div class="pure-g row-tiny" id="footer"></div>
+        <script src="/js/libs/jquery/jquery.js" type="text/javascript"></script>    
+        <script src="/js/libs/jquery.color/jquery.color.2.1.2.js" type="text/javascript"></script>
+        <script src="/js/libs/jqueryui/jquery-ui.js" type="text/javascript"></script>
+        <script src="/js/jcms-controller-static.js" type="text/javascript"></script>
+    </body>
+</html>

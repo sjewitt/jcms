@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>JCMS Consulting - Clean code, Elegant solutions</title>
+        <title>Decoupled/Headless CMS Concept</title>
         <meta name="keywords" content="RedDot, red dot cms,reddot cms,opentext web site management, obtree cms,obtree wcm,obtree, presentation server, headless CMS, decoupled CMS, REST API, XML, structured content API">
         <meta name="description" content="Solutions for transforming legacy RedDot or Obtree WCM websites into a modern decoupled content source"> 
         
@@ -29,13 +29,13 @@
         <link rel="icon" type="image/gif" href="http://www.jcms-consulting.co.uk/images/logo-tiny.gif">
     </head>
 
-    <body class="jcms-reddot">
-        <div class="pure-g row-smaller heading">
+    <body class="jcms-blue">
+        <div class="pure-g row-smaller heading blue">
             <div class="pure-u-1">
                 <a href="index.html" title="Home">
-                    <img class="inline-logo" src="images/logos/logo-large-red.jpg" alt="JCMS Logo"/>
+                    <img class="inline-logo" src="images/logos/logo-large-blue.jpg" alt="JCMS Logo"/>
                 </a>
-                <h1>Decoupled/Headless CMS concept</h1>
+                <div class="strapline"><h1>Decoupled/Headless CMS Concept</h1></div>
             </div>
         </div>
         <div class="pure-g divider">
@@ -53,15 +53,16 @@
                 <div class="panel-title"><h2>Concept</h2></div>
                 <div class="panel-text">
                     <p>
-                        Traditional CMS systems are designed to render web pages based on a given design template incorporating content 
-                        authored by non-technical users. The rendering of the content to alternate consuming applications 
-                        is not usually considered, with the exception of perhaps different HTML variants depending on device (mobile vs desktop for example)
+                        Traditional CMS systems are designed to render web pages based on a given design template that incorporates content 
+                        authored by non-technical users.</p>
+                    <p> The rendering of the content to alternate consuming applications 
+                        is not usually considered, with the exception of perhaps different HTML variants targeting different devices (mobile vs desktop for example)
                     </p>
                     <p>
                         <!--A <a href="https://www.contentful.com/r/knowledgebase/headless-and-decoupled-cms/" target="_blank" title="Decoupled CMS discussion at contentful.com">decoupled CMS</a>--> 
                         A <b>decoupled CMS</b> system does not assume any particular consuming application, but delivers content in
                         a format suitable for simple programmatic integration by <i>any</i> consuming target. This format typically 
-                        is XML or JSON of a documented schema. 
+                        is XML or JSON in a documented schema. 
                     </p>
                     <p class="highlight">
                         We can extend your existing RedDot CMS or Obtree WCM deployments to expose existing content as structured data
@@ -71,6 +72,8 @@
                         Both these products, although originally intended as stand-alone web content management systems,
                         are capable of delivering content wrapped in XML or JSON for consumption by any enabled application.
                     </p>
+                    <p>Please see the <a href="/decoupled-cms-details.html" title="Decoipled CMS technical discussion">technical discussion</a> page for further 
+                        details of how this can be achieved with RedDot WCM and Obtree CMS.</p>
                 </div>
             </div>
 
@@ -86,13 +89,13 @@
                         and other component objects either directly, or formatted as wrapped structured data.
                     </p>
                     <p>
-                        Obtree WCM has, out-of-the-box, a number of SOAP interfaces (so-called 'managers') that allow both retrieval, and interaction with, 
-                        various aspects of the system. This model of object access, while core product, is more aimed at complex integrations</p>
-                    <p>Further, all objects - if given a URL - are instantly accessible over HTTP(S), though will be
-                        returned as-is, with no structured wrapper.  
+                        Obtree WCM has, out-of-the-box, a number of SOAP interfaces (so-called 'managers') that allow both retrieval of, and interaction with, 
+                        various aspects of the system. This model of object access, while core product, is aimed at complex integrations.</p>
+                    <p>Further, all objects - if given a URL - are instantly accessible over HTTP(S), though the object contents will be
+                        returned as-is, with no structural or formatting wrapper.  
                     </p>
                     <p>
-                        We can can  very easily develop a simple interface to retrieve content wrapped in XML or JSON, in response to a 
+                        We can can  very easily develop a simple interface to retrieve and present content wrapped in XML or JSON, in response to a 
                         structured URL, using the Obtree WCM scripting layer. This can be extended to return lists, or include a simple API to 
                         get texts, or images, or templates. 
                     </p>
@@ -146,7 +149,7 @@
         <div class="pure-g divider">
             <div class="pure-u-1"></div>
         </div>
-        <div class="pure-g row-small" id="footer"></div>
+        <div class="pure-g row-tiny" id="footer"></div>
         <script src="/js/libs/jquery/jquery.js" type="text/javascript"></script>    
         <script src="/js/libs/jquery.color/jquery.color.2.1.2.js" type="text/javascript"></script>
         <script src="/js/libs/jqueryui/jquery-ui.js" type="text/javascript"></script>

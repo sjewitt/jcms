@@ -5,59 +5,184 @@ http://stackoverflow.com/questions/16387400/getting-the-right-font-size-on-every
 http://kyleschaeffer.com/development/css-font-size-em-vs-px-vs-pt-vs/
 http://www.leemunroe.com/designing-for-high-resolution-retina-displays/
 https://css-tricks.com/snippets/css/retina-display-media-query/ ***
-*/
-/* 
+
     Created on : 06-Mar-2015, 20:31:20
-    Author     : silas
+    Author     : JCMS
 
-*/
-
+COLOURS:
+#339900;  rgb(51,153,0) green
+#990000;  rgb(153,0,0) red
+#006666;  rgb(0,102,102) teal
+#9900ff;  rgb(153,0,255) purple
+#203864;  rgb(32,56,100) dark blue
+*/ 
 body{
     background-color: #eee;    
-    /*color:#fff;*/
     font-family: tahoma;
     font-size:16px;
     color:#111;
     background-size:cover;
 }
 
-body.jcms-home{
-    /*background-image: url("/images/css/background.jpg");*/
+body.jcms-purple{}
+
+body.jcms-green{}
+
+body.jcms-red{}
+
+body.jcms-teal{}
+
+/* default panel title background colour */
+body .panel-title > h2{
+    background-color: #9900ff;
 }
 
-body.jcms-obtree{
-    /*background-image: url("/images/css/background3.jpg");*/
+/* default eadings and link colour */
+body.jcms-purple a, body.jcms-purple h3, body.jcms-purple h4, body.jcms-purple h5{
+   color: #9900ff;  
 }
 
-body.jcms-reddot{
-    /*background-image: url("/images/css/background4.jpg");*/
+/* section pages panel title background over-rides */
+body.jcms-purple .panel-title > h2{
+    background-color: #9900ff;
+}
+body.jcms-green .panel-title > h2{
+    background-color: #339900; 
+}
+body.jcms-red .panel-title > h2{
+    background-color: #990000;
+}
+body.jcms-teal .panel-title > h2{
+    background-color: #006666;
+}
+body.jcms-blue .panel-title > h2{
+    background-color: #203864;
 }
 
-body.jcms-webdev{
-    /*background-image: url("/images/css/background6.jpg");*/
+/* section pages headming and link colour over-rides */
+body.jcms-green a,body.jcms-green h3,body.jcms-green h4,body.jcms-green h5{
+   color: #339900; 
 }
+body.jcms-red a,body.jcms-red h3,body.jcms-red h4,body.jcms-red h5{
+    color: #990000;
+}
+body.jcms-teal a,body.jcms-teal h3,body.jcms-teal h4,body.jcms-teal h5{
+    color: #006666;
+}
+body.jcms-blue a,body.jcms-blue h3,body.jcms-blue h4,body.jcms-blue h5{
+    color: #203864;
+}
+
+/* Homepage panels colour-coded square: common settings */
+div.panel-title > div.colour-flag{
+    display: inline-block;
+    float: right;
+    position: relative;
+    top: -30px;
+    width: 28px;
+    height: 28px;
+    border: 1px solid black;
+    border-left: 1px solid black;
+}
+
+/* Homepage panels colour-coded square: specific colours */
+body.home div.jcms-green > div.panel-title > div.colour-flag{
+    background-color: #339900;
+}
+body.home div.jcms-red > div.panel-title > div.colour-flag{
+    background-color: #990000;
+}
+body.home div.jcms-teal > div.panel-title > div.colour-flag{
+    background-color: #006666;
+}
+body.home div.jcms-blue > div.panel-title > div.colour-flag{
+    background-color: #203864;
+}
+
+/* Homepage colour coded panel links/headings to match following page colour scheme */
+div.jcms-green a,div.jcms-green h3,div.jcms-green h4,div.jcms-green h5{
+   color: #339900; 
+}
+div.jcms-red a,div.jcms-red h3,div.jcms-red h4,div.jcms-red h5{
+    color: #990000;
+}
+div.jcms-blue a,div.jcms-blue h3,div.jcms-blue h4,div.jcms-blue h5{
+    color: #203864;
+}
+div.jcms-teal a,div.jcms-teal h3,div.jcms-teal h4,div.jcms-teal h5{
+    color: #006666;
+}
+
+
+/*body.jcms-teal a{
+   color: #006666; 
+}
+TODO: Extend this
+
+div.jcms-teal a{
+   color: #006666; 
+}*/
+
 body > div.pure-g.row-smaller.heading{
     background-color: white;
     height:188px;
+    background-size: cover;
+}
+/* default banners. Can over-ride with specific classes - TODO */
+body > div.pure-g.row-smaller.heading.purple{
+    background-image: url("/images/banners/banner-teal-1.png");
+}
+body > div.pure-g.row-smaller.heading.red{
+    background-image: url("/images/banners/banner-red-1.png");
+}
+body > div.pure-g.row-smaller.heading.green{
+    background-image: url("/images/banners/banner-green-1.png");
+}
+body > div.pure-g.row-smaller.heading.teal{
+    background-image: url("/images/banners/banner-teal-1.png");
+}
+body > div.pure-g.row-smaller.heading.blue{
+    background-image: url("/images/banners/banner-blue-1.png");
 }
 
 body > div.heading > div{
-        text-align:left; 
+    text-align:left; 
     display:table;
     width:100%;
 }
 
-/*body > div.heading > div > h1{
-    display:table-cell; vertical-align:middle
-}*/
+p{
+    /* https://stackoverflow.com/questions/3845433/css-line-spacing unit-less */
+    line-height: 1.5;
+}
+
+p.caption{
+    font-size: 10pt;
+    font-style: italic;
+    margin-left:50px;
+}
+
 .inline-logo{
     width:150px;
 }
 
-
 .divider{
     background:rgba(255,255,255,.5);
     height:6px;
+}
+
+/* we might have a breadcrumb list in top divider */
+.bc{
+    height:40px;
+}
+
+.bc > div > ul{
+    display:inline;
+    list-style-type:none;
+}
+
+.bc > div > ul > li{
+    display:inline-block;
 }
 
 .heading img{
@@ -65,20 +190,58 @@ body > div.heading > div{
     float:left;
     padding:10px;
 }
+div.heading a{
+    z-index:10;
+}
 
 body > div.pure-g.row-smaller.heading > div{
     display:flex;
     align-items: center;
 }
 
-.heading h1{
-/*    display:table-cell; 
-    vertical-align:middle;
-    padding-bottom:16px;
+div.heading div.strapline{
     position: absolute;
-    left: 180px;
-    top: 46px;*/
+    width: 100%;
+    /*min-height: 73px;*/
+    top: 0px;
+    left:0px; /* need to explicitly state this for IE */
+    background-color: rgba(60,60,60,0.87);
 }
+/* colour coded backgrounds */
+div.heading.purple div.strapline{
+    background-color: rgba(30,0,50,0.5);
+}
+div.heading.green div.strapline{
+    background-color: rgba(20,60,0,0.5);
+}
+div.heading.red div.strapline{
+    background-color: rgba(30,0,0,0.5);
+}
+div.heading.teal div.strapline{
+    background-color: rgba(0,50,50,0.5);
+}
+div.heading.blue div.strapline{
+    background-color: rgba(32,56,100,0.5);
+}
+
+div.heading h1{
+    z-index: 10;
+    margin-left: 170px;
+    /*font-weight:normal;*/
+    letter-spacing: 0.1em;
+    color:white;
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+}
+
+/* MQ over-rides */
+@media screen and (max-width: 567px) {
+    div.heading h1{
+        margin-left:120px;
+        font-weight:normal;
+    }
+}
+
 
 .row{
     min-height:300px;
@@ -98,58 +261,123 @@ body > div.pure-g.row-smaller.heading > div{
 }
 .linkpanel.customers img{
     height: 75px;
+    width:75px;
     vertical-align: middle;
-    padding-right: 20px;
+    border:1px solid #9900ff;
+    margin-bottom:2px;
 }
 /* content styles */
 .panel-title{
     padding : 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .panel-title > h2{
-    background-color: #9900ff; /* rgb(153,0,255) purple*/
+    /*background-color: #9900ff;  rgb(153,0,255) purple*/
     color:#eee;
     padding-left: 20px;
     border:1px solid black;
 }
 
-body.jcms-obtree .panel-title > h2{
-    background-color: #339900; /* rgb(51,153,0) green*/ 
+
+
+h3{
+    /*  */
+}
+h4{
+    font-style: italic;
+}
+h5{
+    
 }
 
-body.jcms-reddot .panel-title > h2{
-    background-color: #990000;  /* rgb(153,0,0) red*/
+#bc{
+    padding-top:5px;
 }
-
-body.jcms-webdev .panel-title > h2{
-    background-color: #006666; /*rgb(0,102,102) aqua*/
+#bc > h2{
+    background-color: darkgrey; /* rgb(153,0,255) purple*/
+    font-size:14pt;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-weight:normal;
+    font-style: italic;
+}
+#bc > h2 > span.bc-tip{
+    font-weight:bold;
+}
+/* hide at narrow screens */
+@media screen and (max-width: 567px) {
+    #bc{
+        display:none;
+    }
 }
 
 
 .panel-text{
     padding-left: 20px;
     padding-right: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    position:relative;
 }
 .panel-text a{
     text-decoration: none;
     font-weight: 700;
     color: inherit;
+    /*padding-left:20px;*/
 }
 .panel-text a:hover{
     border-top: 1px dashed grey;
     border-bottom: 1px dashed grey;
 }
-.panel-text > img{
-    width:65px;
+.panel-text > figure > img{
+    width:85%;
+    /*max-width:980px;*/
     border:1px solid #aaa;
+    /* see https://stackoverflow.com/questions/3186688/drop-shadow-for-png-image-in-css */
+    -o-box-shadow:      12px 12px 29px #555;
+    -icab-box-shadow:   12px 12px 29px #555;
+    -khtml-box-shadow:  12px 12px 29px #555;
+    -moz-box-shadow:    12px 12px 29px #555;
+    -webkit-box-shadow: 12px 12px 29px #555;
+    box-shadow:         12px 12px 29px #555;
+}
+.panel-text > figure > img.small{
+    width:60%;
+}
+
+figure{
+    text-align:center;
+}
+figcaption{
+    font-size: 11pt;
+    font-style: italic;
+}
+
+.panel-text > p{
+    text-align:justify;
 }
 .panel-text>p.highlight{
     font-size:1.1em;
     font-weight:bold;
     padding-left:30px;
     border-left:3px solid #111;
+}
+.panel-text > ul > li{
+    margin-top:10px;
+}
+
+.panel-text dl > dt{
+    padding-top: 15px;
+    font-weight:bold;
+}
+.panel-text dl > dd{
+    font-style: italic;
+    -webkit-margin-start: 0px;
+    margin-left: 0px;
+}
+.panel-text dl > dd > span{
+   font-style: normal;
 }
 
 span.tooltip{
@@ -197,6 +425,10 @@ span.tooltip{
 .wufoo li {
     width: 98%;
 }
+#contact input{
+    border:1px solid lightgray;
+}
+
 
 #container ul{
     padding-left:10px;
@@ -259,6 +491,7 @@ p.timeline-Tweet-text{
 @media screen and (max-width: 567px) {
     .heading h1{
         font-size:16pt;
+       
         /*padding-top:8px;
         
         position: absolute;
