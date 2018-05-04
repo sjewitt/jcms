@@ -293,18 +293,26 @@ h5{
 
 #bc{
     padding-top:5px;
+    padding-bottom:5px;
+    height:auto;
 }
-#bc > h2{
-    background-color: darkgrey; /* rgb(153,0,255) purple*/
-    font-size:14pt;
+#bc > div{
+    border: 1px solid #ccc; /* rgb(153,0,255) purple*/
+    /*font-size:14pt;*/
     padding-top:5px;
     padding-bottom:5px;
+    padding-left:20px;
     font-weight:normal;
-    font-style: italic;
+    /*font-style: italic;*/
 }
 #bc > h2 > span.bc-tip{
     font-weight:bold;
 }
+
+#bc > div > a{
+    padding-right:10px;
+}
+
 /* hide at narrow screens */
 @media screen and (max-width: 567px) {
     #bc{
@@ -355,7 +363,7 @@ figcaption{
 }
 
 .panel-text > p{
-    text-align:justify;
+    /*text-align:justify;*/
 }
 .panel-text>p.highlight{
     font-size:1.1em;
@@ -371,12 +379,12 @@ figcaption{
     padding-top: 15px;
     font-weight:bold;
 }
-.panel-text dl > dd{
+.panel-text dl > dd > p{
     font-style: italic;
     -webkit-margin-start: 0px;
     margin-left: 0px;
 }
-.panel-text dl > dd > span{
+.panel-text dl > dd > p > span{
    font-style: normal;
 }
 

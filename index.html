@@ -8,7 +8,7 @@
         <!-- Open Graph data -->
         <meta property="og:title" content="JCMS Consulting: Home" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="http://www.jcms-consulting.co.uk/" />
+        <meta property="og:url" content="http://www.jcms-consulting.co.uk/index.html" />
         <meta property="og:image" content="http://www.jcms-consulting.co.uk/images/logos/logo-large-purple.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="200" />
@@ -49,7 +49,7 @@
             
             <!-- logo/title -->
             <div class="pure-u-1 pure-u-sm-1-2 linkpanel row">
-                <div class="panel-title"><h2>What We Do</h2></div>
+                <div class="panel-title" id='panel-whatwedo'><h2>What&nbsp;We&nbsp;Do</h2></div>
                 <div class="panel-text"><p>After 16 years experience at <a href="//www.opentext.com" title="OpenText Corporation" target="_blank">OpenText</a>, I started my own consultancy offering specialist support and service for existing users of OpenText WCM products Management Server (Red Dot) and Presentation Server (Obtree) as well as general web development and open source web content management system support.</p>
                     <p>We can offer:</p>
                         <ul>
@@ -69,8 +69,8 @@
             
             <!-- Obtree -->
             <div class="pure-u-1 pure-u-sm-1-2 linkpanel row transparency jcms-green">
-                <div class="panel-title">
-                    <h2><a href="obtree-wcm.html" title="Obtree WCM">Obtree WCM</a></h2>
+                <div class="panel-title" id='panel-obtree'>
+                    <h2><a href="obtree-wcm.html" title="Obtree WCM">Obtree&nbsp;WCM</a></h2>
                     <div class="colour-flag"></div>
                 </div>
                 <div class="panel-text">
@@ -90,8 +90,8 @@
             
             <!-- Red Dot -->
             <div class="pure-u-1 pure-u-sm-1-2 linkpanel row transparency jcms-red">
-                <div class="panel-title">
-                    <h2><a href="reddot-cms.html" title="RedDot CMS">RedDot CMS</a></h2>
+                <div class="panel-title" id='panel-reddot'>
+                    <h2><a href="reddot-cms.html" title="RedDot CMS">RedDot&nbsp;CMS</a></h2>
                     <div class="colour-flag"></div>
                 </div>
                 <div class="panel-text">
@@ -110,8 +110,8 @@
             
             <!-- Headless CMS -->
             <div class="pure-u-1 pure-u-sm-1-2 jcms-blue linkpanel row">
-                <div class="panel-title">
-                    <h2><a href="decoupled-cms.html" title="Decoupled CMS">Decoupled CMS</a></h2>
+                <div class="panel-title" id='panel-headless'>
+                    <h2><a href="decoupled-cms.html" title="Decoupled CMS">Decoupled&nbsp;CMS</a></h2>
                     <div class="colour-flag"></div>
                 </div>
                 <div class="panel-text">
@@ -135,17 +135,14 @@
 
             <!-- web dev -->
             <div class="pure-u-1 pure-u-sm-1-2 jcms-teal linkpanel row">
-                <div class="panel-title">
-                    <h2><a href="web-development.html" title="Web development">Web Development</a></h2>
+                <div class="panel-title" id='panel-webdev'>
+                    <h2><a href="web-development.html" title="Web development">Web&nbsp;Development</a></h2>
                     <div class="colour-flag"></div>
                 </div>
                 <div class="panel-text">
-                    <p>With 15 years experience of web technologies, we also offer more general web development. We can advise on both server and client-side requirements, ranging from simple flat website build to full server-side application development. </p>
+                    <p>With more than 20 years experience of web technologies, we also offer more general web development. We can advise on both server and client-side requirements, ranging from simple flat website build to full server-side application development. </p>
                     <p>
-                        We can translate your page prototypes or PhotoShop designs into a full website, or, we can offer a simple design service. We also have access to professional designers should a more enhanced service be needed. 
-                    </p>
-                    <p>
-                        We can also offer consultancy for your basic WordPress site build to server-side development requirements, ranging from simple templating to complex application build.
+                        We can translate your page prototypes or Photoshop designs into a full website, or, we can offer a simple design service. We also have access to professional designers should a more enhanced service be needed. 
                     </p>
                     <p>
                         <a href="web-development.html" title="Web development">Read more...</a>
@@ -153,9 +150,26 @@
                 </div>               
             </div>
             
-            <div class="pure-u-1 pure-u-sm-1-2 linkpanel row transparency customers">
-                <div class="panel-title">
-                    <h2>Customers</h2>
+                        <!-- web dev -->
+            <div class="pure-u-1 pure-u-sm-1-2 jcms-teal linkpanel row transparency">
+                <div class="panel-title" id='panel-webdev'>
+                    <h2><a href="jcms-wordpress.html" title="Web development">WordPress&nbsp;Development</a></h2>
+                    <div class="colour-flag"></div>
+                </div>
+                <div class="panel-text">
+                    <p>We offer WordPress consultancy ranging from hosting advice, theme advice, blog or site structuring to existing plugin recommendation for your customisation needs.</p>
+                    <p>
+                        We also offer more involved consultancy or customisation for your WordPress site server-side development requirements, ranging from simple custom templating to complex plugin build.
+                    </p>
+                    <p>
+                        <a href="jcms-wordpress.html" title="WordPress and plugins">Read more...</a>
+                    </p>
+                </div>               
+            </div>
+            
+            <div class="pure-u-1 pure-u-sm-1-2 linkpanel row  customers">
+                <div class="panel-title" id='panel-customers'>
+                    <h2>Clients</h2>
                     <div class="colour-flag"></div>
                 </div>
                 <div class="panel-text">
@@ -169,15 +183,13 @@
                         <div class="pure-u-1">
                             <img src="images/logos/eg-logo.png" alt=""/>
                             <a href="http://www.eg-designs.uk" title="eg designs" target="_blank">eg. designs</a>
-                        </div>
-                        
+                        </div>                        
                     </div>
                     <div class="pure-g">
                         <div class="pure-u-1">
                             <img src="images/logos/alphaquad-logo.png" alt=""/>
                             <a href="http://www.alphaquad.co.uk" title="eg designs" target="_blank">AlphaQuad</a>
                         </div>
-                        
                     </div>
                     
                     <div class="pure-g">
@@ -185,7 +197,20 @@
                             <img src="images/logos/carbonheroes-logo.png" alt=""/>
                             <a href="http://www.carbonheroes.com" title="Carbon Heroes" target="_blank">Carbon Heroes</a>
                         </div>
-                        
+                    </div>
+                    
+                    <div class="pure-g">
+                        <div class="pure-u-1">
+                            <img src="images/logos/baxi-logo.gif" alt="BAXI UK logo"/>
+                            <a href="http://www.baxi.co.uk" title="BAXI UK" target="_blank">BAXI UK</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pure-g">
+                        <div class="pure-u-1">
+                            <img src="images/logos/barnardos-logo.png" alt="Barnardos - Believe in Children"/>
+                            <a href="http://www.barnardos.org.uk" title="Barnardos - Believe in Children" target="_blank">Barnardo's</a>
+                        </div>
                     </div>
                 </div>    
             </div>
@@ -194,7 +219,7 @@
             
             <div class="pure-u-1 pure-u-sm-1-2 linkpanel row transparency" id="wufoo_contact_form">
                 <div class="panel-title" id="contact">
-                    <h2>Contact Us</h2>
+                    <h2>Contact&nbsp;Us</h2>
                     <div class="colour-flag"></div>
                 </div>
                 <div class="panel-text">
@@ -203,8 +228,8 @@
             </div>
 
             <div class="pure-u-1 pure-u-sm-1-2 linkpanel row">
-                <div class="panel-title">
-                    <h2>JCMS Tweets</h2>
+                <div class="panel-title" id='panel-tweets'>
+                    <h2>JCMS&nbsp;Tweets</h2>
                     <div class="colour-flag"></div>
                 </div>
                 <div class="panel-text" id="twitter_widget">
@@ -213,7 +238,7 @@
             </div>
             
             <div class="pure-u-1 pure-u-sm-1-2 linkpanel row" id="blogspot">
-                <div class="panel-title">
+                <div class="panel-title" id='panel-blog'>
                     <h2>Blogspot</h2>
                     <div class="colour-flag"></div>
                 </div>

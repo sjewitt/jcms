@@ -32,10 +32,10 @@ var controller = {
         {"key":"1-5-1-3",   "url":"/google-blog.html",              "linktext":"Google Blogger",                "parent" : "1-5-1"},
         {"key":"1-5-2",     "url":"/web-design.html",               "linktext":"Web Design",                    "parent" : "1-5"},
         {"key":"1-5-3",     "url":"/web-design-case-studies.html",  "linktext":"Web Development Case Studies",  "parent" : "1-5"},
-        {"key":"1-5-4",     "url":"/jcms-wordpress-plugins.html",  "linktext":"JCMS WordPress Plugins",         "parent" : "1-5"},
-        {"key":"1-5-4-1",     "url":"/jcms-wordpress-plugin-librivox.html",  "linktext":"Librivox Plugin",         "parent" : "1-5-4"},
-        {"key":"1-5-4-2",     "url":"/jcms-wordpress-plugin-cms-connector.html",  "linktext":"CMS Connector",         "parent" : "1-5-4"},
-        {"key":"1-6",       "url":"/customers.html",                "linktext":"Customers",                     "parent" : "1"}
+        {"key":"1-6",     "url":"/jcms-wordpress.html",  "linktext":"JCMS WordPress Solutions",         "parent" : "1"},
+        {"key":"1-6-1",     "url":"/jcms-wordpress-plugin-librivox.html",  "linktext":"Librivox Plugin",         "parent" : "1-6"},
+        {"key":"1-6-2",     "url":"/jcms-wordpress-plugin-cms-connector.html",  "linktext":"CMS Connector",         "parent" : "1-6"},
+        {"key":"1-7",       "url":"/customers.html",                "linktext":"Customers",                     "parent" : "1"}
         ],
     
     TYPE_HOME : "HOME",
@@ -107,60 +107,77 @@ var controller = {
        this.loadCommonElements();
        this.loadPageSpecificStuff();
        this.buildBreadcrumb();
-       
-       console.log(this.bc);
     },
 
     buildBreadcrumb : function(){
-
-        buildBC = function(obj){
-            var out = new Array();
-            out.push(obj);
-            
-            recurse = function(obj){
-               for(var a=0;a< controller.SITEMAP.length;a++){
-                    if(controller.SITEMAP[a].key === obj.parent){
-                        obj = controller.SITEMAP[a];
-                        out.push(obj);
-                        recurse(obj);
-                    }
-                } 
-            };
-            
-            recurse(obj);
-            return out;
-        };
-        
-        var bc = [];
-        for(var a=0;a<this.SITEMAP.length;a++){
-            if(this.getRelativeUrl(true) === this.SITEMAP[a].url){
-                bc = buildBC(this.SITEMAP[a]);
-            }
-        };
-        controller.bc = bc.reverse();
-        console.log(controller.bc);
-        //finally, construct the HTML:
+//        console.log(this.getPageFilename());
         var _outer = document.createElement("div");
-        var _title = document.createElement("h2");
-
         $(_outer).addClass("pure-u-1 row-tiny linkpanel panel-title");
         $(_outer).attr("id","bc");
-        var _bc = [];   //lazy. Do as DOM eleemnts
-        for(var a = 0;a < controller.bc.length; a++){
-            if(a === controller.bc.length-1){
-                _bc .push("<span class='bc-tip'>" + controller.bc[a].linktext + "</span>");
+        var _title = document.createElement("div");
+        
+        if(this.getPageFilename() === 'index.html'){
+            //build quicklinks for homepage panels
+            var _a = new Array();
+            $('div.linkpanel .panel-title').each(function(){
+                var _temp = document.createElement('a');
+                _temp.setAttribute('href','#'+$(this).attr('id'));
+                _temp.innerHTML = $(this).find('h2').text();
+                $(_temp).click(function(){            
+                    ////and add a simple scrollto thing:
+                    //https://stackoverflow.com/questions/8579643/how-to-scroll-up-or-down-the-page-to-an-anchor-using-jquery
+                    var _anc = $(this).attr('href').replace('#','');
+//                    console.log(_anc);
+                    controller.scrollToAnchor(_anc);
+                    return false;
+                });
+                
+                _a.push(_temp);
+            });
+            for(var a=0;a<_a.length;a++){
+                $(_title).append($(_a[a]).append(" "));
             }
-            else{
-                _bc .push("<a href='" + controller.bc[a].url + "'>" + controller.bc[a].linktext + "</a>");
-            }
-            
         }
-        
-        $(_title).html(_bc.join(" &raquo; "));
+        else{
+            buildBC = function(obj){
+                var out = new Array();
+                out.push(obj);
+
+                recurse = function(obj){
+                   for(var a=0;a< controller.SITEMAP.length;a++){
+                        if(controller.SITEMAP[a].key === obj.parent){
+                            obj = controller.SITEMAP[a];
+                            out.push(obj);
+                            recurse(obj);
+                        }
+                    } 
+                };
+
+                recurse(obj);
+                return out;
+            };
+            var bc = [];
+            for(var a=0;a<this.SITEMAP.length;a++){
+                if(this.getRelativeUrl(true) === this.SITEMAP[a].url){
+                    bc = buildBC(this.SITEMAP[a]);
+                }
+            };
+            controller.bc = bc.reverse();
+
+            var _bc = [];   //lazy. Do as DOM eleemnts
+            for(var a = 0;a < controller.bc.length; a++){
+                if(a === controller.bc.length-1){
+                    _bc .push("<span class='bc-tip'>" + controller.bc[a].linktext + "</span>");
+                }
+                else{
+                    _bc .push("<a href='" + controller.bc[a].url + "'>" + controller.bc[a].linktext + "</a>");
+                }
+
+            }
+            $(_title).html(_bc.join(" &raquo; "));
+        }
         _outer.appendChild(_title);
-        //prepend:
         $("#body-content").prepend($(_outer));
-        
     },
 
     loadPageSpecificStuff : function(){
@@ -337,6 +354,12 @@ var controller = {
             return false;
         }
     },
+    
+    //see https://stackoverflow.com/questions/8579643/how-to-scroll-up-or-down-the-page-to-an-anchor-using-jquery
+    scrollToAnchor : function(aid){
+        var aTag = $("#"+ aid);
+        $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+    },
 
     getCleanUrl : function(){
         var out = window.location.href;
@@ -358,7 +381,6 @@ var controller = {
     },
   
     loadCommonElements : function(){
-        //console.log("loading footer:");
         $.ajax("/inc/footer.html",
         {
             success:function(data){
