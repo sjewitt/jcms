@@ -266,6 +266,13 @@ div.heading h1{
     border:1px solid #9900ff;
     margin-bottom:2px;
 }
+.linkpanel div > ul > li > span {
+    font-style: italic;
+    font-weight:bold;
+    padding-right:5px;
+}
+
+
 /* content styles */
 .panel-title{
     padding : 10px;
@@ -278,7 +285,6 @@ div.heading h1{
     padding-left: 20px;
     border:1px solid black;
 }
-
 
 
 h3{

@@ -13,7 +13,13 @@
 var controller = {
     
     //push these into blocks, and build navs
-    //possibly a breadcrumb too
+    /*
+     * 
+     * This is a data structure that is used to generate the navigation breadcrumb. Currently, it is this Javascript array.
+     * Ideally it will be an AJAX injected JSON structure generated dynamically from - something...
+     * 
+     * Baby steps...
+     */
     SITEMAP : [
         {"key":"1",         "url":"/index.html",                    "linktext" : "Home",             "parent" : null},
         {"key":"1-1",       "url":"/what-we-do.html",               "linktext":"What We Do",                    "parent" : "1"},
@@ -35,7 +41,8 @@ var controller = {
         {"key":"1-6",     "url":"/jcms-wordpress.html",  "linktext":"JCMS WordPress Solutions",         "parent" : "1"},
         {"key":"1-6-1",     "url":"/jcms-wordpress-plugin-librivox.html",  "linktext":"Librivox Plugin",         "parent" : "1-6"},
         {"key":"1-6-2",     "url":"/jcms-wordpress-plugin-cms-connector.html",  "linktext":"CMS Connector",         "parent" : "1-6"},
-        {"key":"1-7",       "url":"/customers.html",                "linktext":"Customers",                     "parent" : "1"}
+        {"key":"1-7",       "url":"/customers.html",                "linktext":"Customers",                     "parent" : "1"},
+        {"key":"1-8",     "url":"/website-management.html",         "linktext":"Website Management",         "parent" : "1"},
         ],
     
     TYPE_HOME : "HOME",
