@@ -266,10 +266,8 @@ var controller = {
                 $("#blogspot div.panel-text").css({"overflow":"auto","height":"300px"});
 
                 //points at: http://jcms-consulting.blogspot.com/feeds/posts/default
-                console.log("call blocspot");
                 $.ajax("/proxy/passthrough-proxy.php",{
                     success:function(data){ //changes context for data
-                        console.log(unescape(data));
                         var _out = "";
                         data = $.parseXML(data);
                         console.log(data);
