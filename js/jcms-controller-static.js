@@ -270,7 +270,6 @@ var controller = {
                     success:function(data){ //changes context for data
                         var _out = "";
                         data = $.parseXML(data);
-                        console.log(data);
                         var title = data.getElementsByTagName("title")[0].firstChild.nodeValue;
 
                         _out += "<h3><a href='http://jcms-consulting.blogspot.com' target='_blank' title='JCMS Blog'><img src='/images/Blogger.svg.png' alt='Blogger logo' style='width:30px;vertical-align:middle;padding-right:10px;padding-bottom:5px;' /></a>"+title+"</h3>";
