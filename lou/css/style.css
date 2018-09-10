@@ -1,0 +1,271 @@
+body{
+  background:#CCF5F1;
+}
+div.bodywrapper{
+    max-width:1280px;
+}
+div.bodycontent{
+    padding-left:50px;
+    padding-right:30px;
+}
+
+#botRightMenu{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-top:55px;/*silas*/
+}
+div.botLeft{
+  display:block;
+  float:left;
+  position:absolute;
+  bottom:0;
+  left:0;
+  margin-right:30px;
+}
+
+p{
+  font:Arial, Helvetica, sans-serif;
+}
+h1{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:200;
+  color:#ffffff; 
+  font-size:9em;
+  margin-bottom:0;
+  margin-left:50px;
+}
+h2{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:600;
+  letter-spacing:23px;
+  margin-bottom:-120px;
+  color:#def9f6; 
+  font-size:4em;
+  margin-left:50px;
+  margin-right:-150px;
+}
+
+.botRightMenu ul{
+  list-style:none;
+  margin-top:65px;  /* Silas */
+  padding-right: 10px;
+  margin-right: 40px;
+  border-right: 5px solid red;
+}
+.botRightMenu li{
+  text-align:right;
+  margin-bottom:33px;
+}
+.botRightMenu a{
+  text-decoration:none;
+  color:#008080;
+  font-weight:bold;
+}
+.botRightMenu a:hover{
+  color:#424237;
+}
+
+/* Silas - mq for title */
+@media screen and (max-width: 1024px) {
+    h2{
+        font-size:3.6em;
+        margin-bottom:-100px;
+        letter-spacing: 20px;
+    }
+    h1{
+        font-size:8em;
+    }
+    .botRightMenu ul{
+        margin-top: 59px;
+    }
+    .botRightMenu li{
+        margin-bottom:29px;
+    }
+}
+@media screen and (max-width: 980px) {
+    h2{
+        font-size:3.2em;
+        margin-bottom:-80px;
+        letter-spacing: 14px;
+    }
+    h1{
+        font-size:6.5em;
+    }
+    .botRightMenu ul{
+        margin-top: 52px;
+    }
+    .botRightMenu li{
+        margin-bottom:20px;
+    }
+}
+@media screen and (max-width: 767px) {
+    div.bodywrapper{
+        text-align: center
+    }
+    h2{
+        font-size:2.8em;
+        margin-bottom:-60px;
+        letter-spacing: 8px;
+        margin-right:0px;
+        margin-left:0px;
+    }
+    h1{
+        font-size:5em;
+        margin-left:0px;
+    }
+    .botRightMenu ul{
+        border-right:none;
+        padding-left: 50px;
+        margin-top:25px;  /* Silas */margin-top: 0px;
+        margin-bottom: 0px;
+        height: 20px;
+        margin-left: -50px
+        /*margin-right:-80px; so we don't wrap'*/
+    }
+    .botRightMenu ul > li{
+        padding-right: 10px;
+        margin-right: 54px;
+        border-right: 5px solid red;
+        display:inline-block;
+    }
+    .botRightMenu ul{
+        margin-right: 0px;
+    }
+    .botRightMenu ul>li:last-child{
+        margin-right: 0px;
+    }
+}
+/* end mq for title */
+
+
+#aboutBox{
+  width:460px;
+  display:block;
+  float:left;
+  position:absolute;
+  bottom:0;
+  left:0;
+}
+#aboutBox P 
+{
+  font-family:Arial, Helvetica, sans-serif;
+  color:#008080;
+  font-size:.8em;
+  margin-left:40px;
+  text-align:justify;
+  line-height:17px;	
+}
+#aboutBox P.bigName
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:600;
+  color:#fff; 
+  font-size:3.62em;
+  margin-left:15px;
+  text-align:center;
+  margin-bottom:10px;
+  margin-top:-18px;
+}
+#aboutBox P.smallHons
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:200;
+  color:#fff; 
+  font-size:1em;
+  margin-left:40px;
+  text-align:right;
+  margin-bottom:-18px;
+  margin-top:-18px;
+}
+#contactInfo ul
+{
+  list-style:none;
+}
+#contactInfo li
+{
+  font-family:Arial, Helvetica, sans-serif;
+  color:#008080;
+  font-weight:normal;
+}
+#contactBox
+{
+  width:470px;
+  display:block;
+  float:left;
+  position:absolute;
+  bottom:0;
+  left:20;
+}
+#contactBox P.bigName
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:600;
+  color:#fff; 
+  font-size:3.62em;
+  margin-left:15px;
+  text-align:right;
+  margin-bottom:10px;
+  margin-top:-18px;
+}
+#contactInfo a:link
+{
+  font-family:Arial, Helvetica, sans-serif;
+  color:#008080;
+  text-decoration:none;
+}
+#contactInfo a:hover
+{
+  font-family:Arial, Helvetica, sans-serif;
+  color:#30C;
+  text-decoration:underline;
+  font-weight:400;
+}
+#aboutContactBox
+{
+  width:680px;
+  display:block;
+  float:left;
+  position:absolute;
+  bottom:0;
+  left:20;
+}
+.contactBigName
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:600;
+  color:#fff; 
+  font-size:3.62em;
+  margin-left:40px;
+  text-align:right;
+}
+.smallHons
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:200;
+  color:#fff; 
+  font-size:1em;
+  margin-right:0px;
+  text-align:right;
+}
+#aboutBox P.aboutBigName
+{
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight:600;
+  color:#fff; 
+  font-size:55px;
+  margin-left:35px;
+  text-align:left;
+  margin-top:35px;
+  margin-bottom:35px;
+}
+#projectRight
+{
+  display:block;
+  float:right;
+  position:absolute;
+  bottom:10px;
+  left:0;
+  margin-right:30px;
+}
