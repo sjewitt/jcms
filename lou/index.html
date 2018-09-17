@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script type="text/javascript">
 
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-34352603-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' === document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
   <meta name="keywords" content="architect, architects, frome, somerset, domestic, houses, extensions, extension, contemporary, modern, traditional, residential, conversions, barn, conservation, wiltshire, bath, bristol, home, refurbishment" />
   <meta name="description" content="Louise Bastable Architects is based in Frome, Somerset, working closely with you to develop exciting and elegant Architecture." />
   <meta name="author" content="Louise Bastable">
@@ -30,27 +18,53 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href="js/libs/pure/pure.css" rel="stylesheet" type="text/css"/>
   <link href="js/libs/pure/grids-responsive.css" rel="stylesheet" type="text/css"/>
-  <link rel="stylesheet" href="css/style.css" type="text/css" MEDIA="screen">
+  <link rel="stylesheet" href="css/style.css?savervg" type="text/css" MEDIA="screen">
+  <link href="css/owl/owl.carousel.min.css" rel="stylesheet" type="text/css"/>
+  <link href="css/owl/owl.theme.default.min.css" rel="stylesheet" type="text/css"/>
+  
   <title>Louise Bastable Architects</title>
 </head>
 
 <body>
+    <div class="header banner background2">
+        <div class="pure-g bodywrapper ">
+            <div class="pure-u-1 pure-u-md-3-4">
+                <h2>Louise Bastable</h2>
+                <h1>ARCHITECTS</h1>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-4 botRightMenu">
+                <ul>
+                  <li><a href="index_orig.html">Home</a></li>
+                  <li><a href="projects_orig.html">Projects</a></li>
+                  <li><a href="about_orig.html">About</a></li>
+                  <li><a href="contact_orig.html">Contact</a></li>
+                </ul>            
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- carousel -->
+    <div class="pure-g carousel-wrap">
+        <div class="pure-u-1">
+            <div class="owl-carousel" id="homepage-carousel">
+                <div class="homepage-carousel-item item-1"></div>
+                <div class="homepage-carousel-item item-2"></div>
+                <div class="homepage-carousel-item item-3"></div>
+                <div class="homepage-carousel-item item-4"></div>
+                <div class="homepage-carousel-item item-5"></div>
+                <div class="homepage-carousel-item item-6"></div>
+              </div>            
+        </div>
+    </div>
+        
     <div class="pure-g bodywrapper">
-        <div class="pure-u-1 pure-u-md-3-4">
-            <h2>Louise Bastable</h2>
-            <h1>ARCHITECT</h1>
-        </div>
-        <div class="pure-u-1 pure-u-md-1-4 botRightMenu">
-            <ul>
-              <li><a href="index_orig.html">Home</a></li>
-              <li><a href="projects_orig.html">Projects</a></li>
-              <li><a href="about_orig.html">About</a></li>
-              <li><a href="contact_orig.html">Contact</a></li>
-            </ul>            
-        </div>
         <div class="pure-u-1 bodycontent">
-            <!-- start slipsum code -->
 
+            
+            
+            <!-- start slipsum code -->
+            
 <h3>Uuummmm, this is a tasty burger!</h3>
 Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that's what you see at a toy store. And you must think you're in a toy store, because you're here shopping for an infant named Jeb.
 
@@ -72,6 +86,7 @@ Now that we know who you are, I know who I am. I'm not a mistake! It all makes s
     </div>
 
     <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+    <script src="js/libs/owl/owl.carousel.min.js" type="text/javascript"></script>
     <script src="js/engine.js" type="text/javascript"></script>
     <script>
         engine.init("index");

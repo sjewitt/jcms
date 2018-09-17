@@ -7,6 +7,7 @@ div.bodywrapper{
 div.bodycontent{
     padding-left:50px;
     padding-right:30px;
+    text-align:left;
 }
 
 #botRightMenu{
@@ -32,15 +33,15 @@ h1{
   font-family:Arial, Helvetica, sans-serif;
   font-weight:200;
   color:#ffffff; 
-  font-size:9em;
-  margin-bottom:0;
+  font-size:8.02em;
+  margin-bottom:15px;
   margin-left:50px;
 }
 h2{
   font-family:Arial, Helvetica, sans-serif;
   font-weight:600;
   letter-spacing:23px;
-  margin-bottom:-120px;
+  margin-bottom:-100px;
   color:#def9f6; 
   font-size:4em;
   margin-left:50px;
@@ -64,18 +65,77 @@ h2{
   font-weight:bold;
 }
 .botRightMenu a:hover{
-  color:#424237;
+  /*color:#424237;*/
+  color:white;
+}
+
+/* Silas - styles for Owl Carousel */
+.owl-carousel:hover{
+    cursor:pointer;
+}
+
+#homepage-carousel{
+    height:200px;
+    border-top: 2px solid red;
+    border-bottom: 3px solid #008080;
+    background-color: #008080;
+}
+/*
+http://local.jcms-consulting/lou/images/project_images/01.jpg
+http://local.jcms-consulting/lou/images/project_images/3.jpg*/
+
+
+div.homepage-carousel-item{
+    /*border:1px solid red;*/
+    height: 200px;
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+div.homepage-carousel-item.item-1{
+    background-image: url('../images/project_images/01.jpg')
+}
+div.homepage-carousel-item.item-2{
+    background-image: url('../images/project_images/02.jpg')
+}
+div.homepage-carousel-item.item-3{
+    background-image: url('../images/project_images/03.jpg')
+}
+div.homepage-carousel-item.item-4{
+    background-image: url('../images/project_images/04.jpg')
+}
+div.homepage-carousel-item.item-5{
+    background-image: url('../images/project_images/05.jpg')
+}
+div.homepage-carousel-item.item-6{
+    background-image: url('../images/project_images/06.jpg')
+}
+
+.header{
+    background-color: #24D6BF;
+}
+
+.banner{
+    background-size: cover;
+    opacity:0.9;    
+}
+
+.background1{
+    background-image: url('../images/banner-background1.jpg');
+}
+.background2{
+    background-image: url('../images/banner-background2.jpg');
 }
 
 /* Silas - mq for title */
 @media screen and (max-width: 1024px) {
     h2{
         font-size:3.6em;
-        margin-bottom:-100px;
+        margin-bottom:-90px;
         letter-spacing: 20px;
     }
     h1{
-        font-size:8em;
+        font-size:7.1em;
     }
     .botRightMenu ul{
         margin-top: 59px;
@@ -91,7 +151,7 @@ h2{
         letter-spacing: 14px;
     }
     h1{
-        font-size:6.5em;
+        font-size:5.82em;
     }
     .botRightMenu ul{
         margin-top: 52px;
@@ -104,15 +164,19 @@ h2{
     div.bodywrapper{
         text-align: center
     }
+    /* body > div > div.pure-u-1.bodycontent > h3:nth-child(1) */
+    div.bodycontent h1,h2,h3,h4,h5.h6{
+        text-align:center;
+    }
     h2{
-        font-size:2.8em;
+        font-size:2.75em;
         margin-bottom:-60px;
         letter-spacing: 8px;
         margin-right:0px;
         margin-left:0px;
     }
     h1{
-        font-size:5em;
+        font-size:4.5em;
         margin-left:0px;
     }
     .botRightMenu ul{
@@ -127,7 +191,7 @@ h2{
     .botRightMenu ul > li{
         padding-right: 10px;
         margin-right: 54px;
-        border-right: 5px solid red;
+        border-right: 2px solid red;
         display:inline-block;
     }
     .botRightMenu ul{
@@ -135,6 +199,30 @@ h2{
     }
     .botRightMenu ul>li:last-child{
         margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    h2{
+        font-size:2.0em;
+        margin-bottom:-60px;
+        letter-spacing: 8px;
+        margin-right:0px;
+        margin-left:0px;
+    }
+    h1{
+        font-size:3.6em;
+        margin-left:0px;
+        margin-top: 55px;
+    }
+    .botRightMenu ul > li {
+        padding-right: 5px;
+        margin-right: 19px;
+    }
+    
+    div.bodycontent {
+        padding-left: 20px;
+        padding-right: 15px;
     }
 }
 /* end mq for title */
