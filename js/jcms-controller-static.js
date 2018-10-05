@@ -88,7 +88,27 @@ var controller = {
     
     
     init : function(){
-    
+        
+        //what page are we on?
+        if($('body').attr('data-page-action')){
+            console.log("page action found");
+            
+            switch($('body').attr('data-page-action')){
+                case "scratchpad":
+                    //attach handlers to menu:
+                    
+                    $("#scratchpad-menu > li").each(function(){
+                        console.log("applying...");
+                        $(this).click(function(){
+                            //the attribute value is the function name...
+                            controller[$(this).attr('data-scratchpad-menu-action')]();
+                        });
+                    });
+                    
+                    break;
+            }
+        }
+        
         //load source linkpanel overlay flag:
         this.sourceHTMLTransparencyFlagArray = new Array();
 
@@ -115,6 +135,21 @@ var controller = {
        this.loadPageSpecificStuff();
        this.buildBreadcrumb();
     },
+
+//test of dynamic called methods:
+    basics : function(){
+        console.log("called basics function");
+    },
+    numbers : function(){
+        console.log("called numbers function");
+    },
+    variables : function(){
+        console.log("called variables function");
+    },
+    words : function(){
+        console.log("called words function");
+    },
+
 
     buildBreadcrumb : function(){
 //        console.log(this.getPageFilename());

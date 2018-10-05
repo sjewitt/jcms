@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>CMS</title>
+	<atom:link href="http://www.themidge.co.uk/cms/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.themidge.co.uk/cms</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Tue, 18 Sep 2018 19:45:42 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.8</generator>
+	<item>
+		<title>homepage title</title>
+		<link>http://www.themidge.co.uk/cms/homepage-title/</link>
+		<pubDate>Tue, 18 Sep 2018 19:45:42 +0000</pubDate>
+		<dc:creator><![CDATA[silas]]></dc:creator>
+		
+		<guid isPermaLink="false">http://www.themidge.co.uk/cms/?page_id=4</guid>
+		<description><![CDATA[<h3>Uuummmm, this is a tasty burger!</h3>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla &#8230; <p class="link-more"><a href="http://www.themidge.co.uk/cms/homepage-title/" class="more-link">Continue reading<span class="screen-reader-text"> "homepage title"</span></a></p>]]></description>
+				<content:encoded><![CDATA[<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla v<br />
+bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla v</p>
+<p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla </p>
+]]></content:encoded>
+			</item>
+		<item>
+		<title>Hello world!</title>
+		<link>http://www.themidge.co.uk/cms/2018/09/17/hello-world/</link>
+		<comments>http://www.themidge.co.uk/cms/2018/09/17/hello-world/#comments</comments>
+		<pubDate>Mon, 17 Sep 2018 19:54:00 +0000</pubDate>
+		<dc:creator><![CDATA[silas]]></dc:creator>
+				<category><![CDATA[Uncategorised]]></category>
+
+		<guid isPermaLink="false">http://www.themidge.co.uk/cms/?p=1</guid>
+		<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
+				<content:encoded><![CDATA[<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+]]></content:encoded>
+			<wfw:commentRss>http://www.themidge.co.uk/cms/2018/09/17/hello-world/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Sample Page</title>
+		<link>http://www.themidge.co.uk/cms/sample-page/</link>
+		<pubDate>Mon, 17 Sep 2018 19:54:00 +0000</pubDate>
+		<dc:creator><![CDATA[silas]]></dc:creator>
+		
+		<guid isPermaLink="false">http://www.themidge.co.uk/cms/?page_id=2</guid>
+		<description><![CDATA[<h1>Sample heading</h1><div>This is an example page. It&#8217;s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this: Hi there! I&#8217;m a bike messenger &#8230; <p class="link-more"><a href="http://www.themidge.co.uk/cms/sample-page/" class="more-link">Continue reading<span class="screen-reader-text"> "Sample Page"</span></a></p>]]></description>
+				<content:encoded><![CDATA[<p>This is an example page. It&#8217;s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+<blockquote><p>Hi there! I&#8217;m a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin&#8217; caught in the rain.)</p></blockquote>
+<p>&#8230;or something like this:</p>
+<blockquote><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Leicester City, XYZ employs over 2,000 people and does all kinds of awesome things for the Leicester community.</p></blockquote>
+<p>As a new WordPress user, you should go to <a href="http://www.themidge.co.uk/cms/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>
+

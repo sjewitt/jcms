@@ -533,3 +533,8 @@ p.timeline-Tweet-text{
         /*top: 12px;*/
     }
 }
+
+/* scratchpad styles */
+ul#scratchpad-menu > li:hover{
+    cursor:pointer;
+}
