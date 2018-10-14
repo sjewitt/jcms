@@ -256,16 +256,33 @@ div.heading h1{
     height:25px;
 }
 
-.linkpanel.transparency{
-    background:rgba(255,255,255,.5);
+@media screen and (max-width: 567px) {
+    .linkpanel.transparency{
+        background:rgba(255,255,255,.5);
+    }
 }
+
+@media screen and (min-width: 568px) {
+    .linkpanel.transparency-desktop{
+        background:rgba(255,255,255,.5);
+    }
+}
+
 .linkpanel.customers img{
     height: 75px;
     width:75px;
     vertical-align: middle;
     border:1px solid #9900ff;
-    margin-bottom:2px;
+    margin-bottom:5px;
 }
+
+@media screen and (max-width: 567px) {
+    .linkpanel.customers img{
+        height: 40px;
+        width:40px;
+    }
+}
+
 .linkpanel div > ul > li > span {
     font-style: italic;
     font-weight:bold;
