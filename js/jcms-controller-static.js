@@ -88,19 +88,39 @@ var controller = {
     
     
     init : function(){
-    
+        
+        //what page are we on?
+        if($('body').attr('data-page-action')){
+            console.log("page action found");
+            
+            switch($('body').attr('data-page-action')){
+                case "scratchpad":
+                    //attach handlers to menu:
+                    
+                    $("#scratchpad-menu > li").each(function(){
+                        console.log("applying...");
+                        $(this).click(function(){
+                            //the attribute value is the function name...
+                            controller[$(this).attr('data-scratchpad-menu-action')]();
+                        });
+                    });
+                    
+                    break;
+            }
+        }
+        
         //load source linkpanel overlay flag:
         this.sourceHTMLTransparencyFlagArray = new Array();
 
         //get linkpanel sourcecode transparencies:
-        $(".linkpanel").each(function(){
-            if($(this).hasClass("transparency")){
-                controller.sourceHTMLTransparencyFlagArray.push(true);
-            }            
-            else{
-                controller.sourceHTMLTransparencyFlagArray.push(false);
-            }
-        });
+//        $(".linkpanel").each(function(){
+//            if($(this).hasClass("transparency")){
+//                controller.sourceHTMLTransparencyFlagArray.push(true);
+//            }            
+//            else{
+//                controller.sourceHTMLTransparencyFlagArray.push(false);
+//            }
+//        });
 
     
 //        $(".linkpanel").first().each(function(){
@@ -110,11 +130,26 @@ var controller = {
 //            //controller.setTextBorderHeight(width);
 //        });
        //this.setTextBorderHeight();
-       this.getContainerHeights();
+//       this.getContainerHeights();
        this.loadCommonElements();
        this.loadPageSpecificStuff();
        this.buildBreadcrumb();
     },
+
+//test of dynamic called methods:
+    basics : function(){
+        console.log("called basics function");
+    },
+    numbers : function(){
+        console.log("called numbers function");
+    },
+    variables : function(){
+        console.log("called variables function");
+    },
+    words : function(){
+        console.log("called words function");
+    },
+
 
     buildBreadcrumb : function(){
 //        console.log(this.getPageFilename());
@@ -129,19 +164,20 @@ var controller = {
             $('div.linkpanel .panel-title').each(function(){
                 var _temp = document.createElement('a');
                 _temp.setAttribute('href','#'+$(this).attr('id'));
+                
                 _temp.innerHTML = $(this).find('h2').text();
                 $(_temp).click(function(){            
                     ////and add a simple scrollto thing:
                     //https://stackoverflow.com/questions/8579643/how-to-scroll-up-or-down-the-page-to-an-anchor-using-jquery
                     var _anc = $(this).attr('href').replace('#','');
-//                    console.log(_anc);
                     controller.scrollToAnchor(_anc);
                     return false;
                 });
-                
+                console.log(_temp)
                 _a.push(_temp);
             });
             for(var a=0;a<_a.length;a++){
+                
                 $(_title).append($(_a[a]).append(" "));
             }
         }
@@ -306,16 +342,16 @@ var controller = {
                  * and set the stripyness on resize...
                  *   see http://stackoverflow.com/questions/744319/get-css-rules-percentage-value-in-jquery
                  */
-                $(".linkpanel").first().parent().hide();
-                var width = $(".linkpanel").first().width();
-                $(".linkpanel").first().parent().show();
-                if(width === 100){  //ie we are on narrow screen
-                    this.switchTransparency(width);
-                }
-                if(width === 50){
-                    //this.setTextBorderHeight(width);
-                }
-                break;
+//                $(".linkpanel").first().parent().hide();
+//                var width = $(".linkpanel").first().width();
+//                $(".linkpanel").first().parent().show();
+//                if(width === 100){  //ie we are on narrow screen
+//                    this.switchTransparency(width);
+//                }
+//                if(width === 50){
+//                    //this.setTextBorderHeight(width);
+//                }
+//                break;
                 
             case "obtree-wcm.html":
                 //console.log("loading obtree page widgets:");
@@ -453,13 +489,13 @@ var controller = {
 
     },
 
-    getContainerHeights : function(){
-        var counter = 0;
-        $("div.linkpanel.row").each(function(){
-            //controller.setTextBorderHeight($(this).height(),counter); //WTF!!!!!
-            counter++;
-        });
-    },
+//    getContainerHeights : function(){
+//        var counter = 0;
+//        $("div.linkpanel.row").each(function(){
+//            //controller.setTextBorderHeight($(this).height(),counter); //WTF!!!!!
+//            counter++;
+//        });
+//    },
 
     /*
      * set the grey border to be 100% height if content is not full height.
@@ -571,21 +607,22 @@ $(window).resize(function(){
     //handle switching the transparency:
     var switched = false;
 
-    $(".linkpanel").first().each(function(){
-        
-        /*
-        http://stackoverflow.com/questions/744319/get-css-rules-percentage-value-in-jquery
-         */
-        $(this).parent().hide();
-        var width = $(this).width();
-        $(this).parent().show();
-        if(prevWidth !== -1 && prevWidth !== width){
-            controller.switchTransparency(width);
-        }
-        //controller.setTextBorderHeight(width);
-        controller.getContainerHeights();
-        prevWidth = width;
-    });
+//TODO: Rework this with CSS and media queries:
+//    $(".linkpanel").first().each(function(){
+//        
+//        /*
+//        http://stackoverflow.com/questions/744319/get-css-rules-percentage-value-in-jquery
+//         */
+//        $(this).parent().hide();
+//        var width = $(this).width();
+//        $(this).parent().show();
+//        if(prevWidth !== -1 && prevWidth !== width){
+//            controller.switchTransparency(width);
+//        }
+//        //controller.setTextBorderHeight(width);
+//        controller.getContainerHeights();
+//        prevWidth = width;
+//    });
 
 });
 
