@@ -1,0 +1,52 @@
+
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>cms</title>
+	<atom:link href="https://www.themidge.co.uk/cms/?feed=rss2" rel="self" type="application/rss+xml" />
+	<link>https://www.themidge.co.uk/cms</link>
+	<description>Just another WordPress site</description>
+	<lastBuildDate>Fri, 21 Sep 2018 13:35:45 +0000</lastBuildDate>
+	<language>en-GB</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=4.9.8</generator>
+	<item>
+		<title>Hello world!</title>
+		<link>https://www.themidge.co.uk/cms/?p=1</link>
+		<comments>https://www.themidge.co.uk/cms/?p=1#comments</comments>
+		<pubDate>Fri, 21 Sep 2018 10:58:24 +0000</pubDate>
+		<dc:creator><![CDATA[silas]]></dc:creator>
+				<category><![CDATA[Uncategorised]]></category>
+
+		<guid isPermaLink="false">http://www.themidge.co.uk/cms/?p=1</guid>
+		<description><![CDATA[Welcome to WordPress. This is your first post. Edit or delete it, then start writing!]]></description>
+				<content:encoded><![CDATA[<p>Welcome to WordPress. This is your first post. Edit or delete it, then start writing!</p>
+]]></content:encoded>
+			<wfw:commentRss>https://www.themidge.co.uk/cms/?feed=rss2&#038;p=1</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+		<item>
+		<title>Sample Page</title>
+		<link>https://www.themidge.co.uk/cms/?page_id=2</link>
+		<pubDate>Fri, 21 Sep 2018 10:58:24 +0000</pubDate>
+		<dc:creator><![CDATA[silas]]></dc:creator>
+		
+		<guid isPermaLink="false">http://www.themidge.co.uk/cms/?page_id=2</guid>
+		<description><![CDATA[This is an example page. Here is Rainbow Dash&#8230; Have fun!]]></description>
+				<content:encoded><![CDATA[<p>This is an example page.</p>
+<p>Here is Rainbow Dash&#8230;</p>
+<p><img class="alignnone size-medium wp-image-6" src="http://www.themidge.co.uk/cms/wp-content/uploads/2018/09/little-pony-friendship-magic-coloring-pages-rainbow-dash_109149-300x212.jpg" alt="" width="300" height="212" srcset="https://www.themidge.co.uk/cms/wp-content/uploads/2018/09/little-pony-friendship-magic-coloring-pages-rainbow-dash_109149-300x212.jpg 300w, https://www.themidge.co.uk/cms/wp-content/uploads/2018/09/little-pony-friendship-magic-coloring-pages-rainbow-dash_109149-768x543.jpg 768w, https://www.themidge.co.uk/cms/wp-content/uploads/2018/09/little-pony-friendship-magic-coloring-pages-rainbow-dash_109149-1024x724.jpg 1024w, https://www.themidge.co.uk/cms/wp-content/uploads/2018/09/little-pony-friendship-magic-coloring-pages-rainbow-dash_109149.jpg 1600w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+<p>Have fun!</p>
+]]></content:encoded>
+			</item>
+	</channel>
+</rss>
+
