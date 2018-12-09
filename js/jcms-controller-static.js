@@ -173,7 +173,6 @@ var controller = {
                     controller.scrollToAnchor(_anc);
                     return false;
                 });
-                console.log(_temp)
                 _a.push(_temp);
             });
             for(var a=0;a<_a.length;a++){
@@ -195,7 +194,6 @@ var controller = {
                         }
                     } 
                 };
-
                 recurse(obj);
                 return out;
             };
@@ -229,38 +227,35 @@ var controller = {
             case "index.html":
                 
                 /*
+                 * Display promo overlay:
+                 */
+                $('#homepage_promo').dialog({"width":"600px",'top':'0px'});
+                
+                /*
                  * insert wufoo form:
                  */
                 var wufoo_wrapper = document.createElement("div");
                 wufoo_wrapper.setAttribute("id","wufoo-z157nixr1oirgiy");
 
-                
                 var formStructure = '<form id="form1" name="form1" class="wufoo topLabel page" accept-charset="UTF-8" autocomplete="off" enctype="multipart/form-data" method="post" novalidate action="https://jcmssilas.wufoo.com/forms/z157nixr1oirgiy/#public"><header id="header" class="info"><h2>Contact Us</h2><div></div></header><ul><li id="foli107" class="notranslate"><label class="desc" id="title107" for="Field107">Name</label><div><input id="Field107" name="Field107" type="text" class="field text large" value="" maxlength="255" tabindex="1" onkeyup=""       /></div></li><li id="foli3" class="notranslate      "><label class="desc" id="title3" for="Field3">Email<span id="req_3" class="req">*</span></label><div><input id="Field3" name="Field3" type="email" spellcheck="false" class="field text large" value="" maxlength="255" tabindex="2"       required /></div></li><li id="foli109" class="      "><label class="desc notranslate" id="title109" for="Field109">Select a Choice</label><div><select id="Field109" name="Field109" class="field select medium"       tabindex="3" ><option value="General" selected="selected"><span class="notranslate">General</span></option><option value="Decoupled CMS" ><span class="notranslate">Decoupled CMS</span></option><option value="Obtree support" ><span class="notranslate">Obtree support</span></option><option value="Obtree training" ><span class="notranslate">Obtree training</span></option><option value="Obtree upgrade" ><span class="notranslate">Obtree upgrade</span></option><option value="Obtree development" ><span class="notranslate">Obtree development</span></option><option value="Obtree integration" ><span class="notranslate">Obtree integration</span></option><option value="Obtree as headless CMS" ><span class="notranslate">Obtree as headless CMS</span></option><option value="Red Dot support" ><span class="notranslate">Red Dot support</span></option><option value="Red Dot training" ><span class="notranslate">Red Dot training</span></option><option value="Red Dot upgrade" ><span class="notranslate">Red Dot upgrade</span></option><option value="Red Dot development" ><span class="notranslate">Red Dot development</span></option><option value="Red Dot integration" ><span class="notranslate">Red Dot integration</span></option><option value="Red Dot as headless CMS" ><span class="notranslate">Red Dot as headless CMS</span></option><option value="Website build" ><span class="notranslate">Website build</span></option><option value="Web application development" ><span class="notranslate">Web application development</span></option><option value="Server-side development" ><span class="notranslate">Server-side development</span></option></select></div></li><li id="foli4" class="notranslate"><label class="desc" id="title4" for="Field4">Your message</label><div><textarea id="Field4" name="Field4" class="field textarea small" spellcheck="true" rows="10" cols="50" tabindex="4" onkeyup=""></textarea></div></li> <li class="buttons "><div><input id="saveForm" name="saveForm" class="btTxt submit" type="submit" value="Submit" /></div></li><li class="hide"><label for="comment">Do Not Fill This Out</label><textarea name="comment" id="comment" rows="1" cols="1"></textarea><input type="hidden" id="idstamp" name="idstamp" value="4OmMIKthKce7wuHEVj62nALcj1oJFs3sD8tfYS/mWgU=" /></li></ul></form>';
                 
                 //add form:
                 $(wufoo_wrapper).append(formStructure);
-                
                 //wufoo_wrapper.innerHTML = formStructure;
                 //See http://stackoverflow.com/questions/22308733/jquery-cant-select-just-appended-element. SCOPE!!
 
                 var subject_query = this.getQueryString("subject");
-
                 if(subject_query !== null){
                     //set dropdown option:
                     $(wufoo_wrapper).find("#Field109 > option").each(function(){
-                        
-                        //console.log($(this).attr("value") + " : " + controller.mapper[subject_query]);
-                        
-//                        console.log();
+
                         if($(this).attr("value") === controller.mapper[subject_query]){
-                            //console.log(" --> match");
                             $(this).attr("selected","selected");
                         }
                         else{
                             $(this).attr("selected",null);
                         }
                     });
-                    
                 }
 
                 //calculate and set iframe size:
@@ -282,7 +277,6 @@ var controller = {
 
                     $('form#form1').attr("target","wufoo_iframe");
                 });
-
 
                 /*
                  * Inject the tweets:
