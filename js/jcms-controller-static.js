@@ -229,7 +229,7 @@ var controller = {
                 /*
                  * Display promo overlay:
                  */
-                $('#homepage_promo').dialog({"width":"600px",'top':'0px'});
+                //$('#homepage_promo').dialog({"width":"600px",'top':'0px'});
                 
                 /*
                  * insert wufoo form:
