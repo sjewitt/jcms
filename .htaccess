@@ -1,0 +1,32 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^jcms-consulting.co.uk [NC]
+RewriteRule (.*) https://www.jcms-consulting.co.uk/$1 [R=301]
+RewriteCond %{REQUEST_URI} /+[^\.]+$
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+
+#see https://stackoverflow.com/questions/2194137/rewriterule-in-htaccess-not-working for tip
+RewriteRule ^about /about.html [NC,L]
+RewriteRule ^about/ /about.html [NC,L]
+RewriteRule ^content-management/obtree/$ /obtree-wcm.html [NC,L]
+RewriteRule ^content-management/obtree/case-studies/$ /obtree-case-studies.html [NC,L]
+RewriteRule ^content-management/reddot/$ /reddot-cms.html [NC,L]
+RewriteRule ^content-management/reddot/case-studies/$ /reddot-case-studies.html [NC,L]
+RewriteRule ^content-management/decoupled/$ /decoupled-cms.html [NC,L]
+RewriteRule ^content-management/decoupled/details/$ /decoupled-cms-details.html [NC,L]
+RewriteRule ^content-management/wordpress/$ /jcms-wordpress.html [NC,L]
+RewriteRule ^content-management/wordpress/themes/$ /jcms-wordpress-themes.html [NC,L]
+RewriteRule ^content-management/wordpress/themes/jcms-theme/$ /jcms-wordpress-theme-jcms.html [NC,L]
+RewriteRule ^content-management/wordpress/plugins/$ /jcms-wordpress-plugins.html [NC,L]
+RewriteRule ^content-management/wordpress/plugins/cms-connector/$ /jcms-wordpress-plugin-cms-connector.html [NC,L]
+RewriteRule ^content-management/wordpress/plugins/librivox/$ /jcms-wordpress-plugin-librivox.html [NC,L]
+RewriteRule ^websites/$ /web.html [NC,L]
+RewriteRule ^websites/development/$ /web-development.html [NC,L]
+RewriteRule ^websites/integrations/$ /integrations.html [NC,L]
+RewriteRule ^websites/site-management/$ /website-management.html [NC,L]
+
+<IfModule headers_module>
+    header set X-Clacks-Overhead "GNU Terry Pratchett"
+</IfModule>
+

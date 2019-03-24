@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>JCMS WordPress LibriVox plugin</title>
-        <meta name="keywords" content="JCMS,JCMS Consulting,jcms,jcms consulting,WordPress, plugin,librivox,LibriVox">
+        <!--<meta name="keywords" content="JCMS,JCMS Consulting,jcms,jcms consulting,WordPress, plugin,librivox,LibriVox">-->
         <meta name="description" content="A WordPress plugin for embedding LibriVox Audio Book search and play functionality into your WordPress templates"> 
         
         <!-- Open Graph data -->
@@ -30,14 +30,25 @@
         
         <link rel="canonical" href="https://www.jcms-consulting.co.uk/jcms-wordpress-plugin-librivox.html">
         <link rel="icon" type="image/gif" href="https://www.jcms-consulting.co.uk/images/logo-tiny.gif">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89678431-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-89678431-2');
+</script>
+
+        
     </head>
 
     <body class="jcms-teal">
         
         <div class="pure-g row-smaller heading teal">
             <div class="pure-u-1">
-                <a href="index.html" title="Home">
-                    <img class="inline-logo" src="images/logos/logo-large-aqua.jpg" alt="JCMS Logo"/>
+                <a href="/" title="Home">
+                    <img class="inline-logo" src="/images/logos/logo-large-aqua.jpg" alt="JCMS Logo"/>
                 </a>
                 <div class="strapline"><h1>JCMS WordPress LibriVox Plugin</h1></div>
             </div>
@@ -55,7 +66,7 @@
                 <div class="panel-text">
                     <h3>Description</h3>
                     <p>
-                        A shortcode-based plugin that accesses free public domain readings of out-of-copyright and copyright-free books. Recordings are provided by <a href="https://www/librivox.org" title="LibriVox.org">LibriVox.org</a> and are accessed via the <a href="https://librivox.org/api/info" title="LibriVox REST API">LibriVox REST API</a>
+                        A shortcode-based plugin that accesses free public domain readings of out-of-copyright and copyright-free books. Recordings are provided by <a href="https://librivox.org" title="LibriVox.org">LibriVox.org</a> and are accessed via the <a href="https://librivox.org/api/info" title="LibriVox REST API">LibriVox REST API</a>
                     </p>
                     <p>
                         The plugin provides a shortcode interface that allows presentation of a specified book, by its LibriVox API ID, with downloadable or HTML5 playable content.
@@ -90,7 +101,7 @@
                         Add shortcode <code>[librivox_book bookid="nnn"]</code> In a suitable location. The parameter 'nnn' is the LibriVox book ID. For example, replacing 'nnn' with '804' will render the classic Conan Doyle Sherlock Holmes collection:
                         </p>
                         <figure>
-                            <img class="large" src="images/lv-single.jpg" alt="LibriVox single book"/>
+                            <img class="large" src="/images/lv-single.jpg" alt="LibriVox single book"/>
                             <figcaption>LibriVox single book</figcaption>
                         </figure>
                     </div>
@@ -101,19 +112,19 @@
                         Add shortcode <code>[librivox_app]</code> In a suitable location. This will trigger the full interactive application, allowing searching for books by author and playing an audio book:
                     </p>
                     <figure>
-                        <img class="large" src="images/lv_app.jpg" alt="LibriVox interactive application #1"/>
+                        <img class="large" src="/images/lv_app.jpg" alt="LibriVox interactive application #1"/>
                         <figcaption>#1: Search for Author</figcaption>
                     </figure>
                     <figure>
-                        <img class="large" src="images/lv_app2.jpg" alt="LibriVox interactive application #2"/>
+                        <img class="large" src="/images/lv_app2.jpg" alt="LibriVox interactive application #2"/>
                         <figcaption>#2: Booklist</figcaption>
                     </figure>
                     <figure>
-                        <img class="large" src="images/lv_app3.jpg" alt="LibriVox interactive application #3"/>
+                        <img class="large" src="/images/lv_app3.jpg" alt="LibriVox interactive application #3"/>
                         <figcaption>#3: Select book</figcaption>
                     </figure>
                     <figure>
-                        <img class="large" src="images/lv_app4.jpg" alt="LibriVox interactive application #4"/>
+                        <img class="large" src="/images/lv_app4.jpg" alt="LibriVox interactive application #4"/>
                         <figcaption>#4: Play track</figcaption>
                     </figure>
                 </div>

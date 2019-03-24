@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
   <url>
-    <loc>https://www.jcms-consulting.co.uk/index.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/</loc> 
   </url>
     <url>
-    <loc>https://www.jcms-consulting.co.uk/decoupled-cms-details.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/decoupled/</loc> 
   </url>
     <url>
-    <loc>https://www.jcms-consulting.co.uk/decoupled-cms.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/decoupled/details/</loc> 
   </url>
     <url>
-    <loc>https://www.jcms-consulting.co.uk/integrations.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/websites/integrations/</loc> 
   </url>
         <url>
-    <loc>https://www.jcms-consulting.co.uk/jcms-wordpress-plugin-cms-connector.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/wordpress/plugins/cms-connector/</loc> 
   </url>
         <url>
-    <loc>https://www.jcms-consulting.co.uk/jcms-wordpress-plugin-librivox.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/wordpress/plugins/librivox/</loc> 
   </url>
         <url>
-    <loc>https://www.jcms-consulting.co.uk/jcms-wordpress-theme-jcms.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/wordpress/themes/jcms-theme/</loc> 
   </url>
       <url>
-    <loc>https://www.jcms-consulting.co.uk/jcms-wordpress.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/wordpress/</loc> 
   </url>
   
       <url>
-    <loc>https://www.jcms-consulting.co.uk/obtree-case-studies.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/obtree/case-studies/</loc> 
   </url>
       <url>
-    <loc>https://www.jcms-consulting.co.uk/obtree-wcm.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/obtree/</loc> 
   </url>
       <url>
-    <loc>https://www.jcms-consulting.co.uk/reddot-case-studies.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/reddot/case-studies/</loc> 
   </url>
       <url>
-    <loc>https://www.jcms-consulting.co.uk/reddot-cms.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/content-management/reddot/</loc> 
   </url>
       <url>
-    <loc>https://www.jcms-consulting.co.uk/web-development.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/websites/development/</loc> 
   </url>
         <url>
-    <loc>https://www.jcms-consulting.co.uk/website-management.html</loc> 
+    <loc>https://www.jcms-consulting.co.uk/websites/site-management/</loc> 
   </url>
 </urlset>

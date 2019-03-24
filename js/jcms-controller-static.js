@@ -21,28 +21,37 @@ var controller = {
      * Baby steps...
      */
     SITEMAP : [
-        {"key":"1",         "url":"/index.html",                    "linktext" : "Home",             "parent" : null},
-        {"key":"1-1",       "url":"/what-we-do.html",               "linktext":"What We Do",                    "parent" : "1"},
-        {"key":"1-2",       "url":"/obtree-wcm.html",               "linktext":"Obtree WCM",                    "parent" : "1"},
-        {"key":"1-2-1",     "url":"/obtree-case-studies.html",      "linktext":"Case Studies",       "parent" : "1-2"},
-        {"key":"1-2-2",     "url":"/obtree-tips.html",              "linktext":"Tips",               "parent" : "1-2"},
-        {"key":"1-3",       "url":"/reddot-cms.html",               "linktext":"RedDot CMS",                    "parent" : "1"},
-        {"key":"1-3-1",     "url":"/reddot-case-studies.html",      "linktext":"Case Studies",       "parent" : "1-3"},
-        {"key":"1-3-2",     "url":"/reddot-tips.html",              "linktext":"Tips",               "parent" : "1-3"},
-        {"key":"1-4",       "url":"/decoupled-cms.html",            "linktext":"Decoupled CMS",                 "parent" : "1"},
-        {"key":"1-4-1",     "url":"/decoupled-cms-details.html",    "linktext":"Details",                 "parent" : "1-4"},
-        {"key":"1-5",       "url":"/web-development.html",          "linktext":"Web Development",               "parent" : "1"},
-        {"key":"1-5-1",     "url":"/integrations.html",             "linktext":"Integrations",                  "parent" : "1-5"},
-        {"key":"1-5-1-1",   "url":"/cludo.html",                    "linktext":"Cludo Search",                  "parent" : "1-5-1"},
-        {"key":"1-5-1-2",   "url":"/google-map.html",               "linktext":"Google Maps",                   "parent" : "1-5-1"},
-        {"key":"1-5-1-3",   "url":"/google-blog.html",              "linktext":"Google Blogger",                "parent" : "1-5-1"},
-        {"key":"1-5-2",     "url":"/web-design.html",               "linktext":"Web Design",                    "parent" : "1-5"},
-        {"key":"1-5-3",     "url":"/web-design-case-studies.html",  "linktext":"Web Development Case Studies",  "parent" : "1-5"},
-        {"key":"1-6",     "url":"/jcms-wordpress.html",  "linktext":"JCMS WordPress Solutions",         "parent" : "1"},
-        {"key":"1-6-1",     "url":"/jcms-wordpress-plugin-librivox.html",  "linktext":"Librivox Plugin",         "parent" : "1-6"},
-        {"key":"1-6-2",     "url":"/jcms-wordpress-plugin-cms-connector.html",  "linktext":"CMS Connector",         "parent" : "1-6"},
-        {"key":"1-7",       "url":"/customers.html",                "linktext":"Customers",                     "parent" : "1"},
-        {"key":"1-8",     "url":"/website-management.html",         "linktext":"Website Management",         "parent" : "1"},
+        {"key":"1",         "url":"/",                    "linktext" : "Home",             "parent" : null},
+        
+        {"key":"1-1",       "url":"/about/",               "linktext":"About Us",                    "parent" : "1"},
+        
+        {"key":"1-2",       "url":"/content-management/obtree/",               "linktext":"Obtree WCM",                    "parent" : "1"},
+        {"key":"1-2-1",     "url":"/content-management/obtree/case-studies/",      "linktext":"Case Studies",       "parent" : "1-2"},
+        {"key":"1-2-2",     "url":"/content-management/obtree/tips/",              "linktext":"Tips",               "parent" : "1-2"},
+        
+        {"key":"1-3",       "url":"/content-management/reddot/",               "linktext":"RedDot CMS",                    "parent" : "1"},
+        {"key":"1-3-1",     "url":"/content-management/reddot/case-studies/",      "linktext":"Case Studies",       "parent" : "1-3"},
+        {"key":"1-3-2",     "url":"/content-management/reddot/tips/",              "linktext":"Tips",               "parent" : "1-3"},
+        
+        {"key":"1-4",       "url":"/content-management/decoupled/",            "linktext":"Decoupled CMS",                 "parent" : "1"},
+        {"key":"1-4-1",     "url":"/content-management/decoupled/details/",    "linktext":"Details",                 "parent" : "1-4"},
+        
+        {"key":"1-5",       "url":"/websites/development/",          "linktext":"Web Development",               "parent" : "1"},
+        {"key":"1-5-1",     "url":"/websites/integrations/",             "linktext":"Integrations",                  "parent" : "1-5"},
+        {"key":"1-5-1-1",   "url":"/websites/integrations/cludo/",                    "linktext":"Cludo Search",                  "parent" : "1-5-1"},
+        {"key":"1-5-1-2",   "url":"/websites/integrations/google-map/",               "linktext":"Google Maps",                   "parent" : "1-5-1"},
+        {"key":"1-5-1-3",   "url":"/websites/integrations/google-blog/",              "linktext":"Google Blogger",                "parent" : "1-5-1"},
+        {"key":"1-5-2",     "url":"/websites/web-design/",               "linktext":"Web Design",                    "parent" : "1-5"},
+        {"key":"1-5-3",     "url":"/websites/web-design/case-studies/",  "linktext":"Web Development Case Studies",  "parent" : "1-5"},
+        
+        {"key":"1-6",       "url":"/content-management/wordpress/",  "linktext":"JCMS WordPress Solutions",         "parent" : "1"},
+        {"key":"1-6-1",     "url":"/content-management/wordpress/plugins/librivox/",  "linktext":"Librivox Plugin",         "parent" : "1-6"},
+        {"key":"1-6-2",     "url":"/content-management/wordpress/plugins/cms-connector/",  "linktext":"CMS Connector",         "parent" : "1-6"},
+        {"key":"1-6-3",     "url":"/content-management/wordpress/themes/jcms-theme/",  "linktext":"JCMS Theme",         "parent" : "1-6"},
+        
+        {"key":"1-7",       "url":"/customers/",                "linktext":"Customers",                     "parent" : "1"},
+        
+        {"key":"1-8",       "url":"/websites/site-management/",         "linktext":"Website Management",         "parent" : "1"},
         ],
     
     TYPE_HOME : "HOME",
@@ -74,7 +83,7 @@ var controller = {
     },
             
     
-    defaultPage : "index.html",
+    defaultPage : "/",
     currentPage : null,
     currentPath : [],
     data : null,
@@ -91,14 +100,11 @@ var controller = {
         
         //what page are we on?
         if($('body').attr('data-page-action')){
-            console.log("page action found");
-            
             switch($('body').attr('data-page-action')){
                 case "scratchpad":
                     //attach handlers to menu:
                     
                     $("#scratchpad-menu > li").each(function(){
-                        console.log("applying...");
                         $(this).click(function(){
                             //the attribute value is the function name...
                             controller[$(this).attr('data-scratchpad-menu-action')]();
@@ -112,53 +118,18 @@ var controller = {
         //load source linkpanel overlay flag:
         this.sourceHTMLTransparencyFlagArray = new Array();
 
-        //get linkpanel sourcecode transparencies:
-//        $(".linkpanel").each(function(){
-//            if($(this).hasClass("transparency")){
-//                controller.sourceHTMLTransparencyFlagArray.push(true);
-//            }            
-//            else{
-//                controller.sourceHTMLTransparencyFlagArray.push(false);
-//            }
-//        });
-
-    
-//        $(".linkpanel").first().each(function(){
-//            $(this).parent().hide();
-//            var width = $(this).width();
-//            $(this).parent().show();
-//            //controller.setTextBorderHeight(width);
-//        });
-       //this.setTextBorderHeight();
-//       this.getContainerHeights();
-       this.loadCommonElements();
-       this.loadPageSpecificStuff();
-       this.buildBreadcrumb();
+        this.loadCommonElements();
+        this.loadPageSpecificStuff();
+        this.buildBreadcrumb();
     },
-
-//test of dynamic called methods:
-    basics : function(){
-        console.log("called basics function");
-    },
-    numbers : function(){
-        console.log("called numbers function");
-    },
-    variables : function(){
-        console.log("called variables function");
-    },
-    words : function(){
-        console.log("called words function");
-    },
-
 
     buildBreadcrumb : function(){
-//        console.log(this.getPageFilename());
         var _outer = document.createElement("div");
         $(_outer).addClass("pure-u-1 row-tiny linkpanel panel-title");
         $(_outer).attr("id","bc");
         var _title = document.createElement("div");
         
-        if(this.getPageFilename() === 'index.html'){
+        if(this.getPageFilename() === '/'){
             //build quicklinks for homepage panels
             var _a = new Array();
             $('div.linkpanel .panel-title').each(function(){
@@ -176,7 +147,6 @@ var controller = {
                 _a.push(_temp);
             });
             for(var a=0;a<_a.length;a++){
-                
                 $(_title).append($(_a[a]).append(" "));
             }
         }
@@ -199,7 +169,7 @@ var controller = {
             };
             var bc = [];
             for(var a=0;a<this.SITEMAP.length;a++){
-                if(this.getRelativeUrl(true) === this.SITEMAP[a].url){
+                if(this.getPageFilename() === this.SITEMAP[a].url){
                     bc = buildBC(this.SITEMAP[a]);
                 }
             };
@@ -213,7 +183,6 @@ var controller = {
                 else{
                     _bc .push("<a href='" + controller.bc[a].url + "'>" + controller.bc[a].linktext + "</a>");
                 }
-
             }
             $(_title).html(_bc.join(" &raquo; "));
         }
@@ -222,9 +191,8 @@ var controller = {
     },
 
     loadPageSpecificStuff : function(){
-        //console.log(this.getPageFilename());
         switch(this.getPageFilename()){
-            case "index.html":
+            case "/":
                 
                 /*
                  * Display promo overlay:
@@ -306,11 +274,9 @@ var controller = {
                         var entries = data.getElementsByTagName("entry");
                         _out += "<ul>";
                         
-                        //for(var a=entries.length-1;a>=0;a--){
                         for(var a=0;a < entries.length;a++){
                             var entryText = entries[a].getElementsByTagName("title")[0].firstChild.nodeValue;
 
-                            //var _date = new Date(Date.parse(date));
                             var published = controller.formatBlogDate(new Date(Date.parse(entries[a].getElementsByTagName("published")[0].firstChild.nodeValue))); //a Date
                             var entryUrl;
 
@@ -332,23 +298,11 @@ var controller = {
                     complete:function(){}
                 });
 
-                /*
-                 * and set the stripyness on resize...
-                 *   see http://stackoverflow.com/questions/744319/get-css-rules-percentage-value-in-jquery
-                 */
-//                $(".linkpanel").first().parent().hide();
-//                var width = $(".linkpanel").first().width();
-//                $(".linkpanel").first().parent().show();
-//                if(width === 100){  //ie we are on narrow screen
-//                    this.switchTransparency(width);
-//                }
-//                if(width === 50){
-//                    //this.setTextBorderHeight(width);
-//                }
-//                break;
                 
-            case "obtree-wcm.html":
-                //console.log("loading obtree page widgets:");
+            case "development/cms/obtree":
+                break;
+                
+            case "development/cms/obtree/":
                 break;
                 
         }
@@ -365,9 +319,7 @@ var controller = {
     },
 
     getPageFilename : function(){
-        var filename = this.getCleanUrl().split(/\//)[this.getCleanUrl().split(/\//).length-1];
-        if(filename.length === 0) filename = this.defaultPage;
-        return filename;
+        return(document.location.pathname);
     },
 
     getQueryString : function(param){
@@ -483,14 +435,6 @@ var controller = {
 
     },
 
-//    getContainerHeights : function(){
-//        var counter = 0;
-//        $("div.linkpanel.row").each(function(){
-//            //controller.setTextBorderHeight($(this).height(),counter); //WTF!!!!!
-//            counter++;
-//        });
-//    },
-
     /*
      * set the grey border to be 100% height if content is not full height.
      * Only applies on widescreen.
@@ -500,11 +444,7 @@ var controller = {
      * work out heights of container FIRST and pass in here: TODO
      */
     setTextBorderHeight : function(containerHeight, index){
-        //console.log(containerHeight);
-        //console.log(containerHeight - 40);
-        //console.log(index);
         $("div.panel-text").eq(index).css({'height':''});
-//        $("div.panel-text").eq(index).css({'height':(containerHeight-100) + "px"});
     }
 
 };
@@ -525,38 +465,6 @@ $(function(){
     $("span.tooltip").tooltip();
 });
 
-
-    /*
-     * build AJAX loading overlay
-     */ 
-    //var counter = 0;
-//    var overlay = document.createElement("div");
-//    overlay.setAttribute("id","overlay");
-//
-//    var spacer = document.createElement("span");
-//    spacer.setAttribute("id","vertical-centerer");
-//
-//    overlay.appendChild(spacer);
-//
-//    var loading = document.createElement("img");
-//    loading.setAttribute("id","centered");
-//    loading.setAttribute("src",controller.loading);
-//    overlay.appendChild(loading);
-
-/*
- * Maybe move this?
- * @param {type} param
- */
-//$(document).ajaxStart(function(){
-//
-//    if(controller.getPageFilename() === "librivox.html"){
-//        (document.getElementsByTagName("body")[0]).appendChild(overlay);
-//    }
-//}).ajaxStop(function(){
-//    if(controller.getPageFilename() === "librivox.html"){
-//        $("#overlay").remove();
-//    }
-//});
 /*
  * Google CSE code
  * https://cse.google.co.uk/cse/all
@@ -572,9 +480,7 @@ $(function(){
     s.parentNode.insertBefore(gcse, s);
   })();
   
-  
-  
-  
+
 var prevWidth = -1;  
 $(window).resize(function(){
 
@@ -594,29 +500,10 @@ $(window).resize(function(){
         });
     }
     else{
-        //console.log("dialog not initialized");
     }
-    
     
     //handle switching the transparency:
     var switched = false;
-
-//TODO: Rework this with CSS and media queries:
-//    $(".linkpanel").first().each(function(){
-//        
-//        /*
-//        http://stackoverflow.com/questions/744319/get-css-rules-percentage-value-in-jquery
-//         */
-//        $(this).parent().hide();
-//        var width = $(this).width();
-//        $(this).parent().show();
-//        if(prevWidth !== -1 && prevWidth !== width){
-//            controller.switchTransparency(width);
-//        }
-//        //controller.setTextBorderHeight(width);
-//        controller.getContainerHeights();
-//        prevWidth = width;
-//    });
 
 });
 

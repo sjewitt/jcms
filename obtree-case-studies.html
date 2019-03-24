@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Obtree Case Studies</title>
-        <meta name="keywords" content="JCMS,JCMS Consulting,jcms,jcms consulting,web development,bespoke development,website best practice,website optimisation,consultancy,obtree cms,obtree wcm,obtree,obtree cms training,obtree training,case studies">
+<!--        <meta name="keywords" content="JCMS,JCMS Consulting,jcms,jcms consulting,web development,bespoke development,website best practice,website optimisation,consultancy,obtree cms,obtree wcm,obtree,obtree cms training,obtree training,case studies">-->
         <meta name="description" content="Case Studies of recent Obtree WCM work performed by JCMS"> 
         
         <meta property="og:title" content="Obtree Case Studies" />
@@ -27,13 +27,24 @@
         
         <link rel="canonical" href="https://www.jcms-consulting.co.uk/obtree-case-studies.html">
         <link rel="icon" type="image/gif" href="https://www.jcms-consulting.co.uk/images/logo-tiny.gif">
+        
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89678431-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-89678431-2');
+</script>
+
     </head>
 
     <body class="jcms-green">
         <div class="pure-g row-smaller heading green">
             <div class="pure-u-1">
-                <a href="index.html" title="Home">
-                    <img class="inline-logo" src="images/logos/logo-large-green.jpg" alt="JCMS Logo"/>
+                <a href="/" title="Home">
+                    <img class="inline-logo" src="/images/logos/logo-large-green.jpg" alt="JCMS Logo"/>
                 </a>
                 <div class="strapline"><h1>Obtree Case Studies</h1></div>
             </div>
@@ -96,7 +107,7 @@
                         This was a .NET 4.5 application with various hooks for authentication, a test HTML and JavaScript file and, crucially, a configuration file with a placeholder for a customer key. Once the HBC customer key was entered into the web.config file and the site and customer IDs added to the client side JavaScript configuration, HBC-specific search results were presented in the test HTML file.
                     </p>
                     <figure>
-                        <img src="images/hbc-cludo-vs-screenshot.png" alt="Cludo proxy web.config with customer key"/>
+                        <img src="/images/hbc-cludo-vs-screenshot.png" alt="Cludo proxy web.config with customer key"/>
                         <figcaption>Cludo proxy web.config with customer key</figcaption>
                     </figure>
                     
@@ -108,11 +119,11 @@
                         The Cludo proxy code runs as an IIS application, so a suitable virtual directory, pointing at the Cludo C# code, was added and converted to an IIS application. The virtual path becomes important later on for the integration with the Obtree WCM system. 
                     </p>
                     <figure>
-                        <img src="images/iis-cludo-application.png" alt="IIS Cludo Application"/>
+                        <img src="/images/iis-cludo-application.png" alt="IIS Cludo Application"/>
                         <figcaption>IIS Cludo Application</figcaption>
                     </figure>
                     <figure>
-                        <img class="small" src="images/iis-cludo-config.png" alt="IIS Cludo Application configuration"/>
+                        <img class="small" src="/images/iis-cludo-config.png" alt="IIS Cludo Application configuration"/>
                         <figcaption>IIS Cludo Application configuration</figcaption>
                     </figure>
                 </div>
@@ -127,17 +138,17 @@
                         The simple test harness is sufficient to confirm that the intranet site has been indexed and that the credentials are valid, as shown below. 
                     </p>
                     <figure>
-                        <img class="small" src="images/hbc-cludo-testfile-screenshot-1.png" alt="Initial view of demo search screen"/>
+                        <img class="small" src="/images/hbc-cludo-testfile-screenshot-1.png" alt="Initial view of demo search screen"/>
                         <figcaption>Initial view of demo search screen</figcaption>
                     </figure>
                     
                     <figure>
-                        <img class="small" src="images/hbc-cludo-testfile-screenshot-2.png" alt="View of demo search screen with autocomplete"/>
+                        <img class="small" src="/images/hbc-cludo-testfile-screenshot-2.png" alt="View of demo search screen with autocomplete"/>
                         <figcaption>View of demo search screen with autocomplete</figcaption>
                     </figure>
                     
                     <figure>
-                        <img src="images/hbc-cludo-testfile-screenshot-3.png" alt="View of demo page with search results"/>
+                        <img src="/images/hbc-cludo-testfile-screenshot-3.png" alt="View of demo page with search results"/>
                         <figcaption>View of demo page with search results</figcaption>
                     </figure>
                 </div>
@@ -150,7 +161,7 @@
                         Therefore, in addition to the simple template modifications to include the HTML and JavaScript changes, the Obtree configuration was adapted with an <code>EXCLUDEMAGIC</code> entry matching the IIS Application name set when the Cludo code was added to the IIS website running the Obtree engine. This is shown in the following screenshot:
                     </p>
                     <figure>
-                        <img class="small" src="images/hbc-cludo-cfg-screenshot.png" alt="Obtree configuration to exclude a specified path"/>
+                        <img class="small" src="/images/hbc-cludo-cfg-screenshot.png" alt="Obtree configuration to exclude a specified path"/>
                         <figcaption>Obtree configuration to exclude a specified path</figcaption>
                     </figure>
                     <p>
@@ -163,18 +174,18 @@
                         The final step was to implement the HTML and JavaScript changes detailed by Cludo following their analysis of the rendered sourcecode. Essentially, the existing search form was re-used, but a DOM identifier added to allow the Cludo code to initialise with the existing search markup. The appropriate initialisation object was also embedded as inline JavaScript to load all required remote libraries and to ensure the correct output DOM targets and format were specified. 
                     </p>
                     <figure>
-                        <img src="images/hbc-obtree-screenshot-1.png" alt="Obtree template showing JavaScript Cludo configuration object"/>
+                        <img src="/images/hbc-obtree-screenshot-1.png" alt="Obtree template showing JavaScript Cludo configuration object"/>
                         <figcaption>Obtree template showing JavaScript Cludo configuration object</figcaption>
                     </figure>
                     <p>
                         Unlike the internet content, the <i>intranet</i> content was indexed with facet attributes, and the results are presented with a breakdown of matches per facet. Each displayed facet is a filter for the current result list. This output is all generated by the Cludo controller code. For example, a search for 'councillors':
                     </p>
                     <figure>
-                        <img class="small" src="images/hbc-render-no-facets-screenshot.png" alt="Search outcome showing all matching results and available facets"/>
+                        <img class="small" src="/images/hbc-render-no-facets-screenshot.png" alt="Search outcome showing all matching results and available facets"/>
                         <figcaption>Search outcome showing all matching results and available facets</figcaption>
                     </figure>
                     <figure>
-                        <img class="small" src="images/hbc-render-facet-screenshot.png" alt="Search outcome showing all matching results filtered by a facet"/>
+                        <img class="small" src="/images/hbc-render-facet-screenshot.png" alt="Search outcome showing all matching results filtered by a facet"/>
                         <figcaption>Search outcome showing all matching results filtered by a facet</figcaption>
                     </figure>
                 </div>
