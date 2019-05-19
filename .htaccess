@@ -6,27 +6,96 @@ RewriteRule (.*) https://www.jcms-consulting.co.uk/$1 [R=301]
 RewriteCond %{REQUEST_URI} /+[^\.]+$
 RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
 
+
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+#RewriteRule ^obtree-case-studies.html https://www.jcms-consulting.co.uk/content-management/obtree/case-studies/ [L,R=301]
+#RewriteRule ^reddot-cms.html https://www.jcms-consulting.co.uk/content-management/reddot/ [L,R=301]
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+#RewriteRule ^obtree-wcm.html https://www.jcms-consulting.co.uk/content-management/obtree/ [L,R=301]
+
+
 #see https://stackoverflow.com/questions/2194137/rewriterule-in-htaccess-not-working for tip
-RewriteRule ^about /about.html [NC,L]
-RewriteRule ^about/ /about.html [NC,L]
-RewriteRule ^content-management/obtree/$ /obtree-wcm.html [NC,L]
-RewriteRule ^content-management/obtree/case-studies/$ /obtree-case-studies.html [NC,L]
-RewriteRule ^content-management/reddot/$ /reddot-cms.html [NC,L]
-RewriteRule ^content-management/reddot/case-studies/$ /reddot-case-studies.html [NC,L]
-RewriteRule ^content-management/decoupled/$ /decoupled-cms.html [NC,L]
-RewriteRule ^content-management/decoupled/details/$ /decoupled-cms-details.html [NC,L]
-RewriteRule ^content-management/wordpress/$ /jcms-wordpress.html [NC,L]
-RewriteRule ^content-management/wordpress/themes/$ /jcms-wordpress-themes.html [NC,L]
-RewriteRule ^content-management/wordpress/themes/jcms-theme/$ /jcms-wordpress-theme-jcms.html [NC,L]
-RewriteRule ^content-management/wordpress/plugins/$ /jcms-wordpress-plugins.html [NC,L]
-RewriteRule ^content-management/wordpress/plugins/cms-connector/$ /jcms-wordpress-plugin-cms-connector.html [NC,L]
-RewriteRule ^content-management/wordpress/plugins/librivox/$ /jcms-wordpress-plugin-librivox.html [NC,L]
-RewriteRule ^websites/$ /web.html [NC,L]
-RewriteRule ^websites/development/$ /web-development.html [NC,L]
-RewriteRule ^websites/integrations/$ /integrations.html [NC,L]
-RewriteRule ^websites/site-management/$ /website-management.html [NC,L]
+#see also https://webmasters.stackexchange.com/questions/67479/using-a-htaccess-to-rewriterule-and-redirect-301-at-the-same-time
+
+#RewriteRule ^about/?$ /about.html [NC,L]    
+
+#RewriteRule ^content-management/obtree/?$ /obtree-wcm.html [L,E=CLEAN_CONTACT_URL:1]
+#RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^index\.html$ / [R=301,L]
+
+RewriteRule ^content-management/obtree/?$ /obtree-wcm.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^obtree-wcm\.html$ /content-management/obtree/ [R=301,L]
+
+RewriteRule ^content-management/obtree/case-studies/?$ /obtree-case-studies.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^obtree-case-studies\.html$ /content-management/obtree/case-studies/ [R=301,L]
+
+RewriteRule ^content-management/reddot/?$ /reddot-cms.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^reddot-cms\.html$ /content-management/reddot/ [R=301,L]
+
+RewriteRule ^content-management/reddot/case-studies/?$ /reddot-case-studies.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^reddot-case-studies\.html$ /content-management/reddot/case-studies/ [R=301,L]
+
+RewriteRule ^content-management/decoupled/?$ /decoupled-cms.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^decoupled-cms\.html$ /content-management/decoupled/ [R=301,L]
+
+RewriteRule ^content-management/decoupled/details/?$ /decoupled-cms-details.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^decoupled-cms-details\.html$ /content-management/decoupled/details/ [R=301,L]
+
+RewriteRule ^content-management/wordpress/?$ /jcms-wordpress.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^jcms-wordpress\.html$ /content-management/wordpress/ [R=301,L]
+
+#failed (actually does not exist):
+RewriteRule ^content-management/wordpress/themes/?$ /jcms-wordpress-themes.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^jcms-wordpress-themes\.html$ /content-management/wordpress/themes/ [R=301,L]
+
+#failed
+RewriteRule ^content-management/wordpress/themes/jcms-theme/?$ /jcms-wordpress-theme-jcms.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^jcms-wordpress-theme-jcms\.html$ /content-management/wordpress/themes/jcms-theme/ [R=301,L]
+
+RewriteRule ^content-management/wordpress/plugins/?$ /jcms-wordpress-plugins.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^jcms-wordpress-plugins\.html$ /content-management/wordpress/plugins/ [R=301,L]
+
+RewriteRule ^content-management/wordpress/plugins/cms-connector/?$ /jcms-wordpress-plugin-cms-connector.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^jcms-wordpress-plugin-cms-connector\.html$ /content-management/wordpress/plugins/cms-connector/ [R=301,L]
+
+RewriteRule ^content-management/wordpress/plugins/librivox/?$ /jcms-wordpress-plugin-librivox.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^jcms-wordpress-plugin-librivox\.html$ /content-management/wordpress/plugins/librivox/ [R=301,L]
+
+RewriteRule ^websites/?$ /web.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^web\.html$ /websites/ [R=301,L]
+
+RewriteRule ^websites/development/?$ /web-development.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^web-development\.html$ /websites/development/ [R=301,L]
+
+RewriteRule ^websites/integrations/?$ /integrations.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^integrations\.html$ /websites/integrations/ [R=301,L]
+
+RewriteRule ^websites/site-management/?$ /website-management.html [L,E=CLEAN_CONTACT_URL:1]
+RewriteCond %{ENV:REDIRECT_CLEAN_CONTACT_URL} !1
+RewriteRule ^website-management\.html$ /websites/site-management/ [R=301,L]
+
 
 <IfModule headers_module>
     header set X-Clacks-Overhead "GNU Terry Pratchett"
 </IfModule>
-

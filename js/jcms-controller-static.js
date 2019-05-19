@@ -22,20 +22,15 @@ var controller = {
      */
     SITEMAP : [
         {"key":"1",         "url":"/",                    "linktext" : "Home",             "parent" : null},
-        
         {"key":"1-1",       "url":"/about/",               "linktext":"About Us",                    "parent" : "1"},
-        
         {"key":"1-2",       "url":"/content-management/obtree/",               "linktext":"Obtree WCM",                    "parent" : "1"},
         {"key":"1-2-1",     "url":"/content-management/obtree/case-studies/",      "linktext":"Case Studies",       "parent" : "1-2"},
         {"key":"1-2-2",     "url":"/content-management/obtree/tips/",              "linktext":"Tips",               "parent" : "1-2"},
-        
         {"key":"1-3",       "url":"/content-management/reddot/",               "linktext":"RedDot CMS",                    "parent" : "1"},
         {"key":"1-3-1",     "url":"/content-management/reddot/case-studies/",      "linktext":"Case Studies",       "parent" : "1-3"},
         {"key":"1-3-2",     "url":"/content-management/reddot/tips/",              "linktext":"Tips",               "parent" : "1-3"},
-        
         {"key":"1-4",       "url":"/content-management/decoupled/",            "linktext":"Decoupled CMS",                 "parent" : "1"},
         {"key":"1-4-1",     "url":"/content-management/decoupled/details/",    "linktext":"Details",                 "parent" : "1-4"},
-        
         {"key":"1-5",       "url":"/websites/development/",          "linktext":"Web Development",               "parent" : "1"},
         {"key":"1-5-1",     "url":"/websites/integrations/",             "linktext":"Integrations",                  "parent" : "1-5"},
         {"key":"1-5-1-1",   "url":"/websites/integrations/cludo/",                    "linktext":"Cludo Search",                  "parent" : "1-5-1"},
@@ -43,22 +38,19 @@ var controller = {
         {"key":"1-5-1-3",   "url":"/websites/integrations/google-blog/",              "linktext":"Google Blogger",                "parent" : "1-5-1"},
         {"key":"1-5-2",     "url":"/websites/web-design/",               "linktext":"Web Design",                    "parent" : "1-5"},
         {"key":"1-5-3",     "url":"/websites/web-design/case-studies/",  "linktext":"Web Development Case Studies",  "parent" : "1-5"},
-        
         {"key":"1-6",       "url":"/content-management/wordpress/",  "linktext":"JCMS WordPress Solutions",         "parent" : "1"},
         {"key":"1-6-1",     "url":"/content-management/wordpress/plugins/librivox/",  "linktext":"Librivox Plugin",         "parent" : "1-6"},
         {"key":"1-6-2",     "url":"/content-management/wordpress/plugins/cms-connector/",  "linktext":"CMS Connector",         "parent" : "1-6"},
         {"key":"1-6-3",     "url":"/content-management/wordpress/themes/jcms-theme/",  "linktext":"JCMS Theme",         "parent" : "1-6"},
-        
         {"key":"1-7",       "url":"/customers/",                "linktext":"Customers",                     "parent" : "1"},
-        
-        {"key":"1-8",       "url":"/websites/site-management/",         "linktext":"Website Management",         "parent" : "1"},
-        ],
+        {"key":"1-8",       "url":"/websites/site-management/",         "linktext":"Website Management",         "parent" : "1"}
+    ],
     
     TYPE_HOME : "HOME",
     TYPE_LANDING :"LANDING",
     TYPE_CONTENT : "CONTENT",
     TYPE_CUSTOM : "CUSTOM",
-    TYPE_DEFAULT : this.TYPE_CONTENT,
+    TYPE_DEFAULT : null,
     
     //manage selection of dropdown based on query string:
     mapper : {
@@ -97,7 +89,7 @@ var controller = {
     
     
     init : function(){
-        
+        this.TYPE_DEFAULT = this.TYPE_CONTENT;
         //what page are we on?
         if($('body').attr('data-page-action')){
             switch($('body').attr('data-page-action')){
@@ -369,7 +361,7 @@ var controller = {
     },
   
     loadCommonElements : function(){
-        $.ajax("/inc/footer.html",
+        $.ajax("/inc/footer.min.html",
         {
             success:function(data){
                 $("#footer").html(data);
