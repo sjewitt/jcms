@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/libs/jquery/jquery.min.js" type="text/javascript"></script>
+        <style>
+            #things > div{
+                display:none;
+            }
+            #things > div:first-of-type{
+                display:block;
+            }
+            .arrows{
+                display:inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="things">
+            <div data-item="1">1</div>
+            <div data-item="2">2</div>
+            <div data-item="3">3</div>
+            <div data-item="4">4</div>
+            <div data-item="5">5</div>
+            <div data-item="6">6</div>
+            <div data-item="7">7</div>
+        </div>
+        <div class='arrows' id="back"><a href="#">&lt;&lt;</a></div><div class='arrows' id="next"><a href="#">&gt;&gt;</a></div>
+        <script>
+            function page(direction){
+                var curr = null;
+                var _new = null;
+                $('#things > div').each(function(){
+                    if($(this).css('display') === 'block'){
+                        curr = parseInt($(this).attr('data-item'));
+                    }
+                    $(this).css({'display':'none'});
+                });
+                switch(direction){
+                    case 'back':
+                        _new = curr-1;
+                        break;
+                    case 'next':
+                        _new = curr+1;
+                        break;
+                }
+                if(_new < 1) _new = 1;
+                if (_new > 7) _new = 7;
+                $('#things').find('div[data-item="' + _new + '"]').css({'display':'block'});
+            }
+            $('#back').click(function(){
+                page('back');
+            });
+            $('#next').click(function(){
+                page('next');
+            });
+        </script>
+    </body>
+</html>
